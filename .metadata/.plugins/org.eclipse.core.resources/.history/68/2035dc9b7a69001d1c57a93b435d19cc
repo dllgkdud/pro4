@@ -1,0 +1,19 @@
+package com.samsung.dao;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.samsung.dto.MemberDTO;
+
+@Repository
+public class MemberDAOImpl implements MemberDAO{
+	
+	@Autowired
+	
+	
+	@Override
+	public List<MemberDTO> memberList() throws Exception {
+		return null;
+	}
+}

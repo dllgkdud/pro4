@@ -1,0 +1,9 @@
+package com.samsung.dto;
+
+public class MemberDTO {
+	private String id;
+	private String pw;
+	private String name;
+	private String tel;
+	private String addr;
+}

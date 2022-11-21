@@ -1,0 +1,18 @@
+
+11월 21, 2022 11:09:30.68 NEW SESSION
+11월 21, 2022 11:09:30.68 [10460:7776:1121/110930.687:ERROR:device_event_log_impl.cc(215)] [11:09:30.688] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+11월 21, 2022 11:26:40.33 [11404:8440:1121/112640.335:ERROR:device_event_log_impl.cc(215)] [11:26:40.336] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+11월 21, 2022 11:29:39.23 [12396:4316:1121/112939.234:ERROR:device_event_log_impl.cc(215)] [11:29:39.233] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+11월 21, 2022 12:16:35.65 [12396:4316:1121/121635.653:ERROR:interface_endpoint_client.cc(690)] Message 5 rejected by interface blink.mojom.WidgetHost
+11월 21, 2022 12:25:33.30 [12396:4316:1121/122533.303:ERROR:interface_endpoint_client.cc(690)] Message 5 rejected by interface blink.mojom.WidgetHost
+11월 21, 2022 14:42:53.73 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+11월 21, 2022 14:42:58.04 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+11월 21, 2022 14:45:29.85 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+11월 21, 2022 15:00:39.42 [2988:12052:1121/150039.422:ERROR:device_event_log_impl.cc(215)] [15:00:39.421] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+11월 21, 2022 15:02:29.23 [14096:2032:1121/150229.238:ERROR:device_event_log_impl.cc(215)] [15:02:29.239] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+11월 21, 2022 16:02:17.53 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+11월 21, 2022 16:12:45.18 [5088:14332:1121/161245.182:ERROR:device_event_log_impl.cc(215)] [16:12:45.183] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+11월 21, 2022 16:14:32.54 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+11월 21, 2022 16:14:34.63 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+11월 21, 2022 18:30:53.15 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+11월 21, 2022 18:30:56.59 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
