@@ -1,0 +1,9 @@
+package com.samsung.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+@RequestMapping("/sample/*")
+public class SampleController {
+
+}

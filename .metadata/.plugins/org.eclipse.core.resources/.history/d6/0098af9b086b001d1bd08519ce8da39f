@@ -1,0 +1,25 @@
+package com.samsung.controller;
+
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+@RequestMapping("/board/*")
+public class BoardController {
+
+	//@RequestMapping(value="list.do", method=RequestMethod.GET)
+	@GetMapping("list.do")
+	public String getBoardList(Model model) throws Exception {
+		return "board/boardList";
+	}
+	@GetMapping("detail.do")
+	public String getBoardDetail(@RequestParam("title") String title, @RequestParam("content") String content, @RequestParam("nick") String nick, ModelAndView mav) throws Exception {
+		mav.addAttribute("title",title);
+		mav.addAttribute("content",content);
+		mav.addAttribute("nick",nick);
+		return "board/boardDetail";
+	}
+}

@@ -28,5 +28,5 @@ public class MemberController {
 	}
 	
 	//localhost:8092/member/getMember.do
-	
+	//@RequestMapping(value = "getMember.do", method = RequestMethod.GET)
 }
