@@ -26,7 +26,7 @@ public class MybatisTest {
 	@Test
 	public void mybatisTest() throws Exception {
 		try(SqlSession session = sqlFactory.openSession()){
-			logger.info("MyBatis Connection success! session : "+session);
+			logger.info("MyBatis Connection success! session  : "+session);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

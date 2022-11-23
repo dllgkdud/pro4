@@ -22,3 +22,5 @@
 11월 23, 2022 18:19:18.10 [14936:14744:1123/181918.104:ERROR:device_event_log_impl.cc(215)] [18:19:18.104] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
 11월 23, 2022 18:26:16.45 [13900:3320:1123/182616.454:ERROR:device_event_log_impl.cc(215)] [18:26:16.454] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
 11월 23, 2022 18:27:22.28 [13900:3320:1123/182722.279:ERROR:interface_endpoint_client.cc(690)] Message 5 rejected by interface blink.mojom.WidgetHost
+11월 23, 2022 18:40:59.19 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+11월 23, 2022 18:47:30.60 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
