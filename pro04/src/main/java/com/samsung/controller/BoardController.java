@@ -17,7 +17,7 @@ import com.samsung.service.BoardService;
 public class BoardController {
 	
 	@Autowired
-	BoardService boardService;
+	private BoardService boardService;
 	
 	//@RequestMapping(value="list.do", method=RequestMethod.GET)
 	@GetMapping("list.do")
@@ -26,10 +26,12 @@ public class BoardController {
 		model.addAttribute("boardList", boardList);
 		return "board/boardList";
 	}
-	@GetMapping("detail.do")
-	public String getBoardDetail(@RequestParam(value="seq", required=false) int seq, Model model) throws Exception {
-		BoardDTO dto = boardService.getBoard(seq);
+	
+	@GetMapping("detail.do")	//detail.do?seq=1
+	public String getBoardDetail(@RequestParam("seq") int seq, Model model) throws Exception {
+		BoardDTO dto = boardService.boardDetail(seq);
 		model.addAttribute("dto", dto);
 		return "board/boardDetail";
 	}
+	
 }

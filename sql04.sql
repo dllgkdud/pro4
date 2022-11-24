@@ -1,13 +1,14 @@
 -- board 테이블
 create table board (
-    seq number primary key,
+    seq int primary key,
     title varchar2(300) not null,
     content varchar2(1000) not null, 
     nick varchar2(50),
     regdate date default sysdate,
-    visited number
+    visited int
 );
 desc board;
+drop table board;
 
 -- 더미데이터
 insert into board values(1, '샘플로 작성한 제목1', '샘플로 작성한 내용1입니다.', 'admin', sysdate, 0);

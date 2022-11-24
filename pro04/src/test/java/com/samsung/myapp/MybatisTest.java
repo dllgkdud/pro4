@@ -3,6 +3,7 @@ package com.samsung.myapp;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -16,7 +17,7 @@ public class MybatisTest {
 	private static final Logger logger = LoggerFactory.getLogger(MybatisTest.class);
 	
 	@Inject
-	private SqlSession sqlFactory;
+	private SqlSessionFactory sqlFactory;
 	
 	@Test
 	public void testFactory() {
