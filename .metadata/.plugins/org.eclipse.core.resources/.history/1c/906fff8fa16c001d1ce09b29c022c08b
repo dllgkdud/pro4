@@ -1,0 +1,22 @@
+package com.naver.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/mem/*")
+public class MemController {
+	
+	@Autowired
+	MemService memService;
+	
+	@GetMapping("list.do")
+	public String getMemList(Model model) throws Exception {
+		List<MemDTO> memList = memService.memList();
+		model.addAttribute("memList", memList);
+		return "mem/memList";
+	}
+}

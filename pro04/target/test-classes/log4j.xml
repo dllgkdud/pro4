@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.samsung.myapp">
+	<logger name="com.naver.myapp">
 		<level value="info" />
 	</logger>
 	

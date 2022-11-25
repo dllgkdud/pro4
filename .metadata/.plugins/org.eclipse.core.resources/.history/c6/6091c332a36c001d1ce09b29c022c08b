@@ -1,0 +1,19 @@
+package com.naver.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.naver.dao.MemDAO;
+import com.naver.dto.MemDTO;
+
+@Service
+public class MemServiceImpl implements MemService{
+	
+	@Autowired
+	MemDAO memdao;
+
+	@Override
+	public MemDTO memDetail(int bno) throws Exception {
+		return ;
+	}
+}

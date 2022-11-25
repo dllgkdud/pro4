@@ -11,9 +11,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>공지사항</title>
-<link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+<jsp:include page="../include/head.jsp"></jsp:include>
 </head>
 <body>
+<header id="header">
+	<jsp:include page="../include/header.jsp"></jsp:include>
+</header>
 <div class="row column text-center">
 	<h2>공지사항상세</h2>
 	<hr>
@@ -45,11 +48,14 @@
 		    </tr>
 	  </tbody>
 	</table>
-</div>	
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-<script>
-  $(document).foundation();
-</script>
+	<button class="button-group">
+		<a href="${path1 }/board/list.do" class="button">목록</a>
+		<a href="${path1 }/board/delete.do?seq=${dto.seq}" class="button">삭제</a>		
+		<a href="${path1 }/board/update.do?seq=${dto.seq}" class="button">수정</a>
+	</button>
+</div>
+<footer id="footer" class="footer-nav row expanded collapse">
+	<jsp:include page="../include/footer.jsp"></jsp:include>
+</footer>
 </body>
 </html>

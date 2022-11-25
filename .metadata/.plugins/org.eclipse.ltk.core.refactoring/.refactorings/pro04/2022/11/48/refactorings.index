@@ -3,3 +3,20 @@
 1669016755883	Rename resource 'TimeMapper.xml'
 1669080209681	Move file
 1669085586638	Rename resource 'member.jsp'
+1669335270786	Move compilation unit
+1669335295324	Move compilation unit
+1669336337183	Delete element
+1669360099715	Delete element
+1669361828423	Rename package 'com.samsung.controller'
+1669361839373	Rename package 'com.samsung.dao'
+1669361854297	Rename package 'com.samsung.dto'
+1669361873037	Rename package 'com.samsung.inject.test'
+1669361881379	Rename package 'com.samsung.myapp'
+1669361888850	Rename package 'com.samsung.service'
+1669361906191	Rename package 'com.samsung.myapp'
+1669361914246	Rename package 'com.samsung.myapp.mapper'
+1669368459492	Delete element
+1669368463775	Delete element
+1669368470363	Delete element
+1669368473011	Delete element
+1669368480452	Delete element

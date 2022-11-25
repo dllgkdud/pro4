@@ -35,3 +35,15 @@
 11월 24, 2022 18:41:51.22 [8872:10440:1124/184151.229:ERROR:device_event_log_impl.cc(215)] [18:41:51.230] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
 11월 24, 2022 18:44:49.45 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
 11월 24, 2022 18:45:20.20 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+
+11월 25, 2022 13:36:40.25 NEW SESSION
+11월 25, 2022 13:36:40.25 [11100:14332:1125/133640.257:ERROR:device_event_log_impl.cc(215)] [13:36:40.258] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+11월 25, 2022 13:40:58.22 [11100:14332:1125/134058.229:ERROR:interface_endpoint_client.cc(690)] Message 0 rejected by interface blink.mojom.WidgetHost
+11월 25, 2022 13:40:58.23 [11100:14332:1125/134058.229:ERROR:interface_endpoint_client.cc(690)] Message 1 rejected by interface blink.mojom.WidgetHost
+11월 25, 2022 14:08:20.62 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+
+11월 25, 2022 16:39:25.03 NEW SESSION
+11월 25, 2022 16:39:25.03 [12964:7344:1125/163925.029:ERROR:device_event_log_impl.cc(215)] [16:39:25.028] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+11월 25, 2022 16:40:44.93 [14496:6092:1125/164044.930:ERROR:device_event_log_impl.cc(215)] [16:40:44.930] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+11월 25, 2022 17:05:42.25 [2992:10824:1125/170542.254:ERROR:device_event_log_impl.cc(215)] [17:05:42.254] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+11월 25, 2022 17:14:38.14 [2992:10824:1125/171438.144:ERROR:CONSOLE(1)] "Uncaught (in promise) TypeError: Cannot read properties of null (reading 'origin')", source: devtools://devtools/bundled/devtools-frontend/front_end/panels/elements/elements.js (1)

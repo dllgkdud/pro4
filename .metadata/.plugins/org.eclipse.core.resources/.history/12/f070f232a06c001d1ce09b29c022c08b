@@ -1,0 +1,7 @@
+package com.naver.controller;
+
+@Controller
+@RequestMapping("/mem/*")
+public class MemController {
+
+}

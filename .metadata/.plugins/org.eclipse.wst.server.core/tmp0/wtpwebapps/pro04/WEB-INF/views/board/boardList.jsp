@@ -11,9 +11,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>공지사항</title>
-<link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+<jsp:include page="../include/head.jsp"></jsp:include>
 </head>
 <body>
+<header id="header">
+	<jsp:include page="../include/header.jsp"></jsp:include>
+</header>
 <div class="row column text-center">
 	<h2>공지사항목록</h2>
 	<hr>
@@ -22,8 +25,7 @@
 	    <tr>
 	      <th>SEQ</th>
 	      <th width="200">TITLE</th>
-	      <th width="300">CONTENT</th>
-	      <th width="200">RegDate</th>
+	      <th width="300">RegDate</th>
 	      <th>Visited</th>
 	    </tr>
 	  </thead>
@@ -31,20 +33,19 @@
 	  	<c:forEach items="${boardList }" var="brd" varStatus="status">
 	    <tr>
 	      <td>${status.count }</td>
-	      <td>${brd.title }</td>
-	      <td><a href="/board/detail.do?seq=${brd.seq }">${brd.content }</a></td>
+	      <td><a href="/board/detail.do?seq=${brd.seq }">${brd.title }</a></td>
 	      <td>${brd.regdate }</td>
 	      <td>${brd.visited }</td>
 	    </tr>
 	    </c:forEach>
 	  </tbody>
 	</table>
-	<a href="${path1 }/board/boardInsert">작성</a>
-</div>	
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-<script>
-  $(document).foundation();
-</script>
+	<button class="button-group">
+		<a href="${path1 }/board/insert.do" class="button">작성</a>
+	</button>
+</div>
+<footer id="footer" class="footer-nav row expanded collapse">
+	<jsp:include page="../include/footer.jsp"></jsp:include>
+</footer>
 </body>
 </html>

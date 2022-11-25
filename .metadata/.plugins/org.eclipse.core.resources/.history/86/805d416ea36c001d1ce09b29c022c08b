@@ -1,0 +1,8 @@
+package com.naver.service;
+
+import com.naver.dto.MemDTO;
+
+public interface MemService {
+	MemDTO memDetail(int bno) throws Exception;
+
+}
