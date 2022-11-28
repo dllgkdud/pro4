@@ -1,0 +1,8 @@
+package snippet;
+
+public class Snippet {
+	<logger name="com.naver.dao">
+			<level value="info" />
+		</logger>
+}
+

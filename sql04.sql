@@ -48,17 +48,36 @@ insert into board values((select nvl(max(seq),0)+1 from board), '샘플로 작�
 select * from board;
 select * from board where cast(seq as integer)=3;
 select * from board where to_number(seq)=3;
+drop table board;
 
 
--- free 테이블(사진 혹은 자료를 업로드하는 자유게시판 테이블)
-create table free (
-    bno int primary key,
-    title varchar2(300) not null,
-    content varchar2(1000) not null,
-    nick varchar2(50),
-    regdate date default sysdate,
-    visited int
+-- data 테이블(사진 혹은 자료를 업로드하는 자료게시판 테이블 - 자료번호, 자료제목, 자료내용, 자료이미지, 자료파일, 자료출력모드, 자료등록일)
+create table data (
+    dno number primary key,
+    dtitle varchar2(300) not null,
+    dcontent varchar2(1000) not null,
+    dposter varchar2(255),
+    dfile varchar2(50),
+    dview char(1) default 'Y',
+    regdate date default sysdate
 );
-desc free;
-select * from free;
+desc data;
+select * from data;
+
+
+-- qna 테이블(글번호, 글제목, 글내용, 작성자, 작성일, 조회수, 글그룹번호, 답변수준, 글깊이)
+create table qna(
+    qno number primary key,
+    qtitle varchar2(300) not null,
+    qcontent varchar2(1000) not null,
+    qauthor varchar2(100) not null,
+    regdate date default sysdate,
+    visited number default 0,
+    qgroup number,
+    qstep number,
+    qindent number
+);
+desc qna;
+select * from qna;
+
 commit;

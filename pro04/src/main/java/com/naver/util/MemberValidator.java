@@ -7,6 +7,7 @@ import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 public class MemberValidator implements Validator{
+	@Override
 	public void validate(Object obj, Errors error) {
 		System.out.println("validate action");
 		Member member = (Member)obj;

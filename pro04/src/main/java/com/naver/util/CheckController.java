@@ -1,10 +1,13 @@
 package com.naver.util;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -74,8 +77,22 @@ public class CheckController {
 		return page;
 	}
 	
+	@InitBinder
+	protected void initBinder(WebDataBinder binder) {
+		binder.setValidator(new MemberValidator());
+	}
+	
 	@RequestMapping(value="check5", method=RequestMethod.GET)
 	public String getCheck5(HttpServletRequest request, Model model) throws Exception {
 		return "check/check5";
+	}
+	//Validator에 의한 검증(@Valid+@InitBinder)
+	@RequestMapping(value="check5", method=RequestMethod.POST)
+	public String postCheck5(@ModelAttribute("member") @Valid Member member, Model model, BindingResult result) throws Exception {
+		String path = "check/error";
+		if(result.hasErrors()) {
+			path = "check/error";
+		}
+		return path;
 	}
 }

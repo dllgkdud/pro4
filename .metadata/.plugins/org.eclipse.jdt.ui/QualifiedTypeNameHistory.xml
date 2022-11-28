@@ -29,4 +29,6 @@
 <fullyQualifiedTypeName name="org.springframework.validation.Errors"/>
 <fullyQualifiedTypeName name="org.springframework.validation.ValidationUtils"/>
 <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.WebDataBinder"/>
+<fullyQualifiedTypeName name="com.naver.util.MemberValidator"/>
 </qualifiedTypeNameHistroy>
