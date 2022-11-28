@@ -62,4 +62,9 @@ ul {
 .orbit-container {
 	height: 100%;
 }
+.form-idCk p {
+	text-align: left;
+	margin-bottom: 0;
+	font-size: 14px;
+}
 </style>

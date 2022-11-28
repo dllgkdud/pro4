@@ -1,0 +1,33 @@
+package com.naver.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.naver.dao.MemDAO;
+import com.naver.dto.MemDTO;
+
+@Service
+public class MemServiceImpl implements MemService {
+	
+	@Autowired
+	private MemDAO memDAO;
+	
+	@Override
+	public List<MemDTO> memList() throws Exception {
+		return memDAO.memList();
+	}
+	@Override
+	public MemDTO memDetail(String userid) throws Exception {
+		return memDAO.memDetail(userid);
+	}
+	@Override
+	public void memInsert(MemDTO dto) throws Exception {
+		memDAO.memInsert(dto);
+	}
+	@Override
+	public void memDelete(String userid) throws Exception {
+		memDAO.memDelete(userid);
+	}
+}

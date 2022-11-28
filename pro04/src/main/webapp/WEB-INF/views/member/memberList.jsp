@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <c:set var="path1" value="${pageContext.request.contextPath }" />
 <!DOCTYPE html>
 <html>
@@ -9,40 +10,45 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>회원</title>
-<link rel="stylesheet" href="include/foundation.css">
-<link rel="stylesheet" href="include/app.css">
+<title>회원목록</title>
+<jsp:include page="../include/head.jsp"></jsp:include>
+<link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
 </head>
 <body>
+<header id="header">
+	<jsp:include page="../include/header.jsp"></jsp:include>
+</header>
 <div class="row column text-center">
-	<h2>회원목록 테스트 화면</h2>
+	<h2>회원목록</h2>
 	<hr>
 	<table>
 	  <thead>
 	    <tr>
-	      <th>NO</th>
-	      <th width="100">ID</th>
-	      <th width="100">NAME</th>
-	      <th width="200">RegDate</th>
-	      <th>Point</th>
+	      <th width="50">NO</th>
+	      <th>ID</th>
+	      <th>NAME</th>
+	      <th width="50">Point</th>	      
+	      <th width="400">RegDate</th>
 	    </tr>
 	  </thead>
 	  <tbody>
 	  	<c:forEach items="${memberList }" var="mem" varStatus="status">
 	    <tr>
 	      <td>${status.count }</td>
-	      <td>${mem.id }</td>
-	      <td>${mem.name }</td>
+	      <td><a href="${path1 }/member/detail.do?userid=${mem.userid }">${mem.userid }</td>
+	      <td>${mem.username }</td>
+	      <td>${mem.userpt }</td>
 	      <td>${mem.regdate }</td>
-	      <td>${mem.pt }</td>
 	    </tr>
 	    </c:forEach>
 	  </tbody>
 	</table>
-</div>	
-<script src="include/jquery.js"></script>
-<script src="include/what-input.js"></script>
-<script src="include/foundation.js"></script>
-<script src="include/app.js"></script>
+	<button class="button-group">
+		<a href="${path1 }/member/insert.do" class="button">등록</a>
+	</button>
+</div>
+<footer id="footer" class="footer-nav row expanded collapse">
+	<jsp:include page="../include/footer.jsp"></jsp:include>
+</footer>
 </body>
 </html>

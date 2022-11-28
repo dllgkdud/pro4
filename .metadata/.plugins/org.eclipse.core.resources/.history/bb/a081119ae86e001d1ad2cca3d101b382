@@ -1,0 +1,44 @@
+package com.naver.util;
+
+import java.util.Locale;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/check/*")
+public class CheckController {
+	
+	@RequestMapping("main")
+	public String sample(Locale locale, Model model) throws Exception {
+		//http://localhost:8092/sample/main
+		return "check/main";
+	}
+	
+	@GetMapping("check1")
+	public String check1(HttpServletRequest request, Model model) throws Exception {
+		//DTO에서 데이터 불러오기
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		//데이터저장 후 forward
+		model.addAttribute("id", id);
+		model.addAttribute("pw", pw);
+		//전송
+		return "check/check1";
+	}
+	@GetMapping("check2")
+	public String check2(HttpServletRequest request, Model model) throws Exception {
+		//DTO에서 데이터 불러오기
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		//데이터저장 후 forward
+		model.addAttribute("id", id);
+		model.addAttribute("pw", pw);
+		//전송
+		return "check/check2";
+	}
+}

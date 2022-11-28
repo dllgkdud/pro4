@@ -1,0 +1,13 @@
+package com.naver.dao;
+
+import java.util.List;
+
+import com.naver.dto.MemDTO;
+
+
+public interface MemDAO {
+	public List<MemDTO> memList() throws Exception;
+	public MemDTO memDetail(String userid) throws Exception;
+	public void memInsert(MemDTO dto)throws Exception;
+
+}

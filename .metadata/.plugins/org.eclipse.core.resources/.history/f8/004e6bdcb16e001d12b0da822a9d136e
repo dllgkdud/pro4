@@ -1,0 +1,11 @@
+package com.naver.dao;
+
+import java.util.List;
+
+import com.naver.dto.MemDTO;
+
+
+public interface MemDAO {
+	public List<MemDTO> memList();
+
+}

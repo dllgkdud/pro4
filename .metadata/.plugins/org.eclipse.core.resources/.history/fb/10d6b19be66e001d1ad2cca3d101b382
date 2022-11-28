@@ -1,0 +1,9 @@
+package com.naver.util;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/check/*")
+public class CheckController {
+
+}

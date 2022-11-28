@@ -20,13 +20,14 @@
 	<resources mapping="/include/**" location="/WEB-INF/views/include" />
 	<resources mapping="/board/**" location="/WEB-INF/views/board" />
 	<resources mapping="/member/**" location="/WEB-INF/views/member" />
-	<resources mapping="/mem/**" location="/WEB-INF/views/mem" />	
+	<resources mapping="/mem/**" location="/WEB-INF/views/mem" />
 	<resources mapping="/reservate/**" location="/WEB-INF/views/reservate" />
 	<resources mapping="/qna/**" location="/WEB-INF/views/qna" />
 	<resources mapping="/databank/**" location="/WEB-INF/views/databank" />
 	<resources mapping="/util/**" location="/WEB-INF/views/util" />
 	<resources mapping="/sample/**" location="/WEB-INF/views/sample" />
 	<resources mapping="/free/**" location="/WEB-INF/views/free" />
+	<resources mapping="/check/**" location="/WEB-INF/views/check" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<!-- 리졸버에 대한 접두사와 접미사 설정 -->
@@ -49,6 +50,14 @@
 	<!-- 기본 메인 패키지 및 컨트롤러 패키지 설정 -->
 	<context:component-scan base-package="com.naver" />
 	
-	<!-- 트랜잭선 및 db 패키지 방안 및 각종 로깅과 보안 설정 -->
-	
+	<!-- 인터셉터 : 글쓰기와 같은 회원권한을 가진 경우 반드시 로그인 페이지를 거쳐 시도할 것 -->
+	<beans:bean id="sampleInterceptor" class="com.naver.util.SampleInterceptor" />
+	<beans:bean id="loginInterceptor" class="com.naver.util.LoginCheckInterceptor" />
+	<beans:bean id="adminInterceptor" class="com.naver.util.AdminInterceptor" />
+	<interceptors>
+		<interceptor>
+			<mapping path="/free/**" />
+			<beans:ref bean="sampleInterceptor" />
+		</interceptor>
+	</interceptors>
 </beans:beans>

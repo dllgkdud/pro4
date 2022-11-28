@@ -1,0 +1,81 @@
+package com.naver.controller;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.naver.dto.MemDTO;
+
+@Controller
+@RequestMapping("/mem/*")
+public class MemController {
+	
+	@Autowired
+	private MemService memService;
+	
+	//회원목록
+	//@RequestMapping(value="list.do", method=RequestMethod.GET)
+	@GetMapping("list.do")
+	public String getmemList(Model model) throws Exception {
+		List<memDTO> memList = memService.memList();
+		model.addAttribute("memList", memList);
+		return "mem/memList";
+	}
+	
+	//회원상세
+	@GetMapping("detail.do")	//detail.do?seq=1
+	public String getmemDetail(HttpServletRequest request, Model model) throws Exception {
+		int seq = Integer.parseInt(request.getParameter("seq"));
+		MemDTO dto = memService.memDetail(seq);
+		model.addAttribute("dto", dto);
+		return "mem/memDetail";
+	}
+	
+	//회원추가(가입)
+	@GetMapping("insert.do")
+	public String insert(HttpServletRequest request, Model model) throws Exception {
+		return "mem/memInsert";
+	}
+	@PostMapping("insert.do")
+	public String memInsert(HttpServletRequest request, Model model) throws Exception {
+		MemDTO dto = new MemDTO();
+		dto.
+		dto.
+		memService.memInsert(dto);
+		return "redirect:list.do";
+	}
+	
+	//회원삭제(탈퇴)
+	@GetMapping("delete.do")
+	public String memDelete(HttpServletRequest request, Model model) throws Exception {
+		int seq = Integer.parseInt(request.getParameter("seq"));
+		memService.memDelete(seq);
+		return "redirect:list.do";
+	}
+	
+	//회원수정
+	@GetMapping("update.do")
+	public String update(HttpServletRequest request, Model model) throws Exception {
+		int seq = Integer.parseInt(request.getParameter("seq"));
+		memDTO dto = memService.memDetail(seq);
+		model.addAttribute("dto", dto);
+		return "mem/memUpdate";
+	}
+	@PostMapping("update.do")
+	public String memUpdate(HttpServletRequest request, Model model) throws Exception {
+		int seq = Integer.parseInt(request.getParameter("seq"));
+		memDTO dto = new memDTO();
+		dto.setSeq(seq);
+		dto.setTitle(request.getParameter("title"));
+		dto.setContent(request.getParameter("content"));
+		memService.memUpdate(dto);
+		return "redirect:list.do";
+	}
+} 

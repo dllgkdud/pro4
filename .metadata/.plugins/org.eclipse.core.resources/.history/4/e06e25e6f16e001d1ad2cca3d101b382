@@ -1,0 +1,6 @@
+package com.naver.util;
+
+public class Member {
+	private String id;
+	private String pw;
+}

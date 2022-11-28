@@ -1,0 +1,13 @@
+package com.naver.service;
+
+import java.util.List;
+
+import com.naver.dto.MemDTO;
+
+public interface MemService {
+	public List<MemDTO> memList() throws Exception;
+	public MemDTO memDetail(String userid) throws Exception;
+	public void memInsert(MemDTO dto) throws Exception;
+	public void memDelete(String userid) throws Exception;
+
+}

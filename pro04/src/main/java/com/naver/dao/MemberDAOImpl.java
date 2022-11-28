@@ -12,7 +12,7 @@ import com.naver.dto.MemberDTO;
 public class MemberDAOImpl implements MemberDAO{
 	
 	@Autowired
-	SqlSession sqlSession;
+	private SqlSession sqlSession;
 	
 	@Override
 	public List<MemberDTO> memberList() throws Exception {
@@ -20,7 +20,7 @@ public class MemberDAOImpl implements MemberDAO{
 	}
 
 	@Override
-	public MemberDTO getMember(String id) {
-		return sqlSession.selectOne("member.getMember",id);
+	public MemberDTO getMember(String userid) {
+		return sqlSession.selectOne("member.getMember",userid);
 	}
 }

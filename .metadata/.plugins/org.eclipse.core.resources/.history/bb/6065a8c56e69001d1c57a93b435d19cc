@@ -1,5 +1,0 @@
-package com.samsung.myapp.mapper;
-
-public interface TimeMapper {
-
-}

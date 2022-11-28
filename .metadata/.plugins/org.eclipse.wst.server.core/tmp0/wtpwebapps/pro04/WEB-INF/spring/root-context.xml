@@ -37,6 +37,12 @@
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>	
 	</bean>
 	
+	<!-- 트랜잭션 및 DB 패키지 방안 및 각 종 로깅과 보안 설정 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<!-- @Transactional 어노테이션 설정  -->
 	<!-- Naver/Daum.Google 메일 서버 설정 -->
 	
 </beans>

@@ -1,32 +1,49 @@
 package com.naver.dto;
 
 public class MemberDTO {
-	private String id;
-	private String pw;
-	private String name;
-	private String tel;
-	private String addr;
-	private String regdate;
-	private int pt;
-	
-	
-	public String getId() {
-		return id;
+	private String userid;
+    private String userpw;
+    private String username;
+    private String birth;
+    private String email;
+    private String tel;
+    private String addr1;
+    private String addr2;
+    private String postcode;
+    private int userpt;
+    private int visited;
+    private String regdate;
+    
+    
+	public String getUserid() {
+		return userid;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
-	public String getPw() {
-		return pw;
+	public String getUserpw() {
+		return userpw;
 	}
-	public void setPw(String pw) {
-		this.pw = pw;
+	public void setUserpw(String userpw) {
+		this.userpw = userpw;
 	}
-	public String getName() {
-		return name;
+	public String getUsername() {
+		return username;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getBirth() {
+		return birth;
+	}
+	public void setBirth(String birth) {
+		this.birth = birth;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getTel() {
 		return tel;
@@ -34,11 +51,35 @@ public class MemberDTO {
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
-	public String getAddr() {
-		return addr;
+	public String getAddr1() {
+		return addr1;
 	}
-	public void setAddr(String addr) {
-		this.addr = addr;
+	public void setAddr1(String addr1) {
+		this.addr1 = addr1;
+	}
+	public String getAddr2() {
+		return addr2;
+	}
+	public void setAddr2(String addr2) {
+		this.addr2 = addr2;
+	}
+	public String getPostcode() {
+		return postcode;
+	}
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
+	}
+	public int getUserpt() {
+		return userpt;
+	}
+	public void setUserpt(int userpt) {
+		this.userpt = userpt;
+	}
+	public int getVisited() {
+		return visited;
+	}
+	public void setVisited(int visited) {
+		this.visited = visited;
 	}
 	public String getRegdate() {
 		return regdate;
@@ -46,16 +87,10 @@ public class MemberDTO {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
-	public int getPt() {
-		return pt;
-	}
-	public void setPt(int pt) {
-		this.pt = pt;
-	}
-	
 	@Override
 	public String toString() {
-		return "MemberDTO [id=" + id + ", pw=" + pw + ", name=" + name + ", tel=" + tel + ", addr=" + addr
-				+ ", regdate=" + regdate + ", pt=" + pt + "]";
+		return "MemberDTO [userid=" + userid + ", userpw=" + userpw + ", username=" + username + ", birth=" + birth + ", email=" + email 
+				+ ", tel=" + tel + ", addr1=" + addr1 + ", addr2=" + addr2 + ", postcode=" + postcode + ", userpt=" + userpt
+				+ ", visited=" + visited + ", regdate=" + regdate + "]";
 	}
 }
