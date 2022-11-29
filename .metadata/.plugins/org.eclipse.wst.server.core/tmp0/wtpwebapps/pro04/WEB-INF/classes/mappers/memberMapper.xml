@@ -3,7 +3,7 @@
 <mapper namespace="member">
 	<!-- 회원목록 -->
 	<select id="memberList" resultType="com.naver.dto.MemberDTO">
-		select * from mem order by regdate desc
+		select * from mem
 	</select>
 	<!-- 회원상세 -->
 	<select id="memberDetail" resultType="com.naver.dto.MemberDTO">
@@ -13,6 +13,14 @@
 	<insert id="memberInsert">
 		insert into mem values(#{userid}, #{userpw}, #{username}, #{birth}, #{email}, #{tel}, #{addr1}, #{addr2}, #{postcode}, 10, 0, sysdate)
 	</insert>
+	<!-- 로그인(controller) -->
+	<select id="signIn" resultType="com.naver.dto.MemberDTO">
+		select * from mem where userid = #{userid}
+	</select>
+	<!-- 로그인(ajax) -->
+	<select id="logIn" resultType="com.naver.dto.MemberDTO">
+		select userid, userpw, username from mem where userid = #{userid}
+	</select>
 	<!-- 회원수정 -->
 	<update id="memberUpdate">
 		update mem set userpw = #{userpw}, username = #{username}, email = #{email}, tel = #{tel}, addr1 = #{addr1}, addr2 = #2{addr2}, postcode = #{postcode} where userid = #{userid}

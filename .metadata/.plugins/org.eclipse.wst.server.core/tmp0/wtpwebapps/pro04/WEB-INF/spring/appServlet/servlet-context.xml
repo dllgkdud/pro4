@@ -59,5 +59,16 @@
 			<mapping path="/free/**" />
 			<beans:ref bean="sampleInterceptor" />
 		</interceptor>
+		<interceptor>
+			<mapping path="/free/insert.do" />
+			<mapping path="/free/update.do" />
+			<mapping path="/free/delete.do" />
+			<beans:ref bean="loginInterceptor" />
+		</interceptor>
+		<interceptor>
+			<mapping path="/board/insert.do" />
+			<mapping path="/board/update.do" />
+			<beans:ref bean="adminInterceptor" />
+		</interceptor>
 	</interceptors>
 </beans:beans>

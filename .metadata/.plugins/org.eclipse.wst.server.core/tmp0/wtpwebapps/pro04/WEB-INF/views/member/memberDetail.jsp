@@ -20,10 +20,10 @@
 <div class="content">
 	<div class="row column text-center">
 		<div class="container">
-		<c:if test="${aid=='admin' }">
+		<c:if test="${sid=='admin' }">
 			<h2 class="con_tit">정보수정</h2>
 		</c:if>
-		<c:if test="${aid!='admin' }">
+		<c:if test="${sid!='admin' }">
 			<h2 class="con_tit">마이 페이지</h2>
 		</c:if>
 		<h2>회원가입양식</h2>
@@ -75,11 +75,11 @@
 		<button class="button-group">
 			<a href="${path1 }/member/list.do" class="button">목록</a>
 			<input type="submit" class="submit button" value="수정" />
-			<c:if test="${aid=='admin' }">
+			<c:if test="${sid=='admin' }">
 				<a href="${path1 }/member/delete.do?id=${member.id }" class="button">회원 강퇴</a>
 			</c:if>
-			<c:if test="${aid!='admin' }">
-				<a href="${path1 }/member/delete.do?id=${aid }" class="button">회원 탈퇴</a>
+			<c:if test="${sid!='admin' }">
+				<a href="${path1 }/member/delete.do?id=${sid }" class="button">회원 탈퇴</a>
 			</c:if>
 		</button>
 		</form>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+	<!-- 회원목록 -->
+	<select id="memberList" resultType="com.naver.dto.MemberDTO">
+		select * from mem order by regdate desc
+	</select>
+	<!-- 회원상세 -->
+	<select id="memberDetail" resultType="com.naver.dto.MemberDTO">
+		select * from mem where userid = #{userid}
+	</select>
+	<!-- 회원등록(가입) -->
+	<insert id="memberInsert">
+		insert into mem values(#{userid}, #{userpw}, #{username}, #{birth}, #{email}, #{tel}, #{addr1}, #{addr2}, #{postcode}, 10, 0, sysdate)
+	</insert>
+	<!-- 로그인(controller) -->
+	<select id="signIn" resultType="com.naver.dto.MemberDTO">
+		select * from mem where userid = #{userid}
+	</select>
+	<!-- 로그인(ajax) -->
+	<select id="logIn" resultType="com.naver.dto.MemberDTO">
+		select userid, userpw, username from mem where userid = #{userid}
+	</select>
+	<!-- 회원수정 -->
+	<update id="memberUpdate">
+		update mem set userpw = #{userpw}, username = #{username}, email = #{email}, tel = #{tel}, addr1 = #{addr1}, addr2 = #2{addr2}, postcode = #{postcode} where userid = #{userid}
+	</update>
+	<!-- 회원삭제(탈퇴) -->
+	<delete id="memberDelete">
+		delete from mem where userid = #{userid}
+	</delete>
+</mapper>
+<!-- namespace나 해당 명령의 id는 절대 중복될 수 없음 -->

@@ -43,6 +43,8 @@
 	</bean>
 	
 	<!-- @Transactional 어노테이션 설정  -->
+	<!-- <tx:annotation-driven transaction-manager="transactionManager" /> -->
+	
 	<!-- Naver/Daum.Google 메일 서버 설정 -->
 	
 </beans>

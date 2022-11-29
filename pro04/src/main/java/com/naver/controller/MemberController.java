@@ -6,6 +6,8 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -20,9 +22,10 @@ import com.naver.service.MemberService;
 @Controller
 @RequestMapping("/member/*")
 public class MemberController {
+	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	
 	@Autowired
-	private MemberService memberService;
+	MemberService memberService;
 	
 	@Inject
 	BCryptPasswordEncoder pwdEncoder;
@@ -51,12 +54,48 @@ public class MemberController {
 		}
 	
 	//회원상세(일반)
-	@RequestMapping(value="info.do", method = RequestMethod.GET)
-	public String memberInfo(Model model, HttpServletRequest request) throws Exception {
-		String userid = (String) session.getAttribute("sid");
-		MemberDTO member = memberService.getMember(userid);
-		model.addAttribute("member", member);
-		return "member/memberDetail";
+		/*
+		 * @RequestMapping(value="info.do", method = RequestMethod.GET) public String
+		 * memberInfo(Model model, HttpServletRequest request) throws Exception { String
+		 * userid = (String) session.getAttribute("sid"); MemberDTO member =
+		 * memberService.getMember(userid); model.addAttribute("member", member); return
+		 * "member/memberInfo"; }
+		 */
+	
+	//회원가입(암호화)
+	@RequestMapping(value="insert.do", method=RequestMethod.POST)
+	public String memberInsert(MemberDTO member, Model model) throws Exception{
+		//암호화
+		String userpw = member.getUserpw();
+		String pwd = pwdEncoder.encode(userpw);
+		member.setUserpw(pwd);
+		memberService.memberInsert(member);
+		return "redirect:/";
+	}
+	
+	//로그인(폼 로딩)
+	@RequestMapping("loginForm.do")
+	public String loginForm(Model model) throws Exception {
+		return "member/memberInsert";
+	}
+	
+	//로그인(controller)
+	@RequestMapping(value="login.do", method=RequestMethod.POST)
+	public String memberLogin(@RequestParam String userid, @RequestParam String userpw, HttpServletRequest request, Model model) throws Exception {
+		session.invalidate();
+		MemberDTO mdto = new MemberDTO();
+		mdto.setUserpw(userpw);
+		mdto.setUserid(userid);
+		MemberDTO login = memberService.signIn(mdto);
+		boolean loginSuccess = pwdEncoder.matches(mdto.getUserpw(), login.getUserpw());
+		if(loginSuccess && login!=null) {
+			session.setAttribute("member", login);
+			session.setAttribute("sid", userid);
+			return "redirect:/";
+		} else {
+			return "redirect:loginForm.do";
+		}
+		
 	}
 	
 	//로그인(Ajax)
