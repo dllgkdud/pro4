@@ -51,14 +51,15 @@ select * from board where to_number(seq)=3;
 drop table board;
 
 
--- data 테이블(사진 혹은 자료를 업로드하는 자료게시판 테이블 - 자료번호, 자료제목, 자료내용, 자료이미지, 자료파일, 자료출력모드, 자료등록일)
+-- data 테이블(사진 혹은 자료를 업로드하는 자료게시판 테이블 - 자료번호, 자료제목, 자료내용, 자료이미지, 자료파일, 작성자, 조회수, 자료등록일)
 create table data (
     dno number primary key,
     dtitle varchar2(300) not null,
     dcontent varchar2(1000) not null,
     dposter varchar2(255),
     dfile varchar2(50),
-    dview char(1) default 'Y',
+    author VARCHAR2(50),
+    visited number default 0,
     regdate date default sysdate
 );
 desc data;

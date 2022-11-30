@@ -10,6 +10,10 @@
 	<select id="boardDetail" resultType="com.naver.dto.BoardDTO">
 		select * from board where seq = #{seq}
 	</select>
+	<!-- 공지사항조회수 -->
+	<update id="visited">
+		update board set visited=visited+1 where seq = #{seq}
+	</update>
 	<!-- 공지사항등록 -->
 	<insert id="boardInsert">
 		insert into board values((select nvl(max(seq),0)+1 from board), #{title}, #{content}, 'admin', sysdate, 0)

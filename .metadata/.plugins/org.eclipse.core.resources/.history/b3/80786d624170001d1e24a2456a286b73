@@ -1,0 +1,6 @@
+package com.naver.dao;
+
+@Repository
+public class DataDAOImpl implements DataDAO {
+	
+}

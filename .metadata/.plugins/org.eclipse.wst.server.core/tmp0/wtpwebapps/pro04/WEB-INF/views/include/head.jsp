@@ -44,6 +44,9 @@ ul {
 .has-submenu {
 	padding-top:10px;
 }
+.has-submenu a {
+	
+}
 .dropdown {
 	width:100%;
 }
@@ -62,9 +65,47 @@ ul {
 .orbit-container {
 	height: 100%;
 }
+.orbit-slide {
+	box-sizing: inherit;
+	positon: relative;
+}
+.orbit-slide img {
+	width: 100vw;
+}
+.slide_text_box {
+	display: block;
+	width: 100%;
+}
+.slide_title {
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	font-size: 40px;
+	color: #fff;
+}
+.slide_title:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+.slide_text {
+	position: absolute;
+	top: 75%;
+	left: 10%;
+	font-size: 16px;
+	color: #fff;
+}
+.slide_text:after {
+	content: "";
+	clear: both;
+	display: block;
+}
 .form-idCk p {
 	text-align: left;
 	margin-bottom: 0;
 	font-size: 14px;
+}
+div.row h2 {
+	padding-top: 20px;
 }
 </style>

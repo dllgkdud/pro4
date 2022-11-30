@@ -31,7 +31,7 @@
 				<a href="#">서비스</a>
 				<ul class="submenu menu vertical" data-submenu>
 					<li><a href="${path1 }/board/list.do">공지사항</a></li>
-					<li><a href="#">자료실</a></li>
+					<li><a href="${path1 }/data/list.do">자료실</a></li>
 					<li><a href="#">질문 및 답변</a></li>
 				</ul>
 			</li>
