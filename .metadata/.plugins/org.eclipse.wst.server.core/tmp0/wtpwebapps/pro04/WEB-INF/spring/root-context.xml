@@ -26,8 +26,7 @@
 	
 	<!-- sql 대신 my-batis 설정 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource" />
-		
+		<property name="dataSource" ref="dataSource" />		
 		<!-- my-batis 설정파일 등록 -->
 		<property name="configLocation" value="classpath:/mybatis-config.xml"></property>
 		<!-- sql처럼 데이터베이스와 자바 클래스를 데이터 연관 지어줄 파일 위치와 이름 지정 -->

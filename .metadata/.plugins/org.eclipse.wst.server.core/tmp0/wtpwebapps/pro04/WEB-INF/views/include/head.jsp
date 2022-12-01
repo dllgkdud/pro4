@@ -53,6 +53,7 @@ ul {
 }
 .has-submenu {
 	padding-top: 10px;
+	padding-left: 50px;
 }
 .has-submenu a {
 	color: #222;
@@ -64,6 +65,7 @@ ul {
 }
 .is-submenu-item:hover {
 	background-color: #1ec545;
+	text-decoration: underline;
 }
 .is-submenu-item a {
 	color: #fff;

@@ -14,27 +14,48 @@ public class MemberDAOImpl implements MemberDAO{
 	@Autowired
 	private SqlSession sqlSession;
 	
-	//È¸¿ø¸ñ·Ï
+	//íšŒì›ëª©ë¡
 	@Override
 	public List<MemberDTO> memberList() throws Exception {
 		return sqlSession.selectList("member.memberList");
 	}
 	
-	//È¸¿øÁ¤º¸
+	//íšŒì›ìƒì„¸
 	@Override
 	public MemberDTO memberDetail(String userid) {
 		return sqlSession.selectOne("member.memberDetail",userid);
 	}
 	
-	//È¸¿ø°¡ÀÔ
+	//íšŒì›ê°€ì…
 	@Override
 	public void memberInsert(MemberDTO member) throws Exception {
 		sqlSession.insert("member.memberInsert",member);
 	}
 	
-	//·Î±×ÀÎ(controller)
+	//ë¡œê·¸ì¸(controller)
 	@Override
 	public MemberDTO logIn(MemberDTO mdto) throws Exception {
 		return sqlSession.selectOne("member.logIn", mdto);
+	}
+
+	@Override
+	public MemberDTO signIn(MemberDTO mdto) throws Exception {
+		return sqlSession.selectOne("member.signIn", mdto);
+	}
+
+	@Override
+	public MemberDTO loginCheck(MemberDTO mdto) throws Exception {
+		mdto = sqlSession.selectOne("member.loginCheck", mdto);
+		return mdto;
+	}
+
+	@Override
+	public void memberUpdate(MemberDTO member) throws Exception {
+		sqlSession.update("member.memberUpdate", member);
+	}
+
+	@Override
+	public void memberDelete(String userid) throws Exception {
+		sqlSession.delete("member.memberDelete", userid);
 	}
 }

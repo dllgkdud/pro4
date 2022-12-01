@@ -14,27 +14,51 @@ public class MemberServiceImpl implements MemberService{
 	@Autowired
 	private MemberDAO memberDao;
 	
-	//È¸¿ø¸ñ·Ï
+	//íšŒì›ëª©ë¡
 	@Override
 	public List<MemberDTO> memberList() throws Exception {
 		return memberDao.memberList();
 	}
 	
-	//È¸¿øÁ¤º¸
+	//íšŒì›ìƒì„¸
 	@Override
 	public MemberDTO memberDetail(String userid) throws Exception {
 		return memberDao.memberDetail(userid);
 	}
 	
-	//È¸¿ø°¡ÀÔ
+	//íšŒì›ê°€ì…
 	@Override
 	public void memberInsert(MemberDTO member) throws Exception {
 		memberDao.memberInsert(member);
 	}
 	
-	//·Î±×ÀÎ(controller)
+	//ë¡œê·¸ì¸(controller)
 	@Override
 	public MemberDTO logIn(MemberDTO mdto) throws Exception {
 		return memberDao.logIn(mdto);
+	}
+	
+	//ë¡œê·¸ì¸(DAO)
+	@Override
+	public MemberDTO signIn(MemberDTO mdto) throws Exception {
+		return memberDao.signIn(mdto);
+	}
+	
+	//ë¡œê·¸ì¸(ajax)
+	@Override
+	public MemberDTO loginCheck(MemberDTO mdto) throws Exception {
+		return memberDao.loginCheck(mdto);
+	}
+	
+	//íšŒì›ìˆ˜ì •
+	@Override
+	public void memberUpdate(MemberDTO member) throws Exception {
+		memberDao.memberUpdate(member);
+	}
+	
+	//íšŒì›ì‚­ì œ(íƒˆí‡´)
+	@Override
+	public void memberDelete(String userid) throws Exception {
+		memberDao.memberDelete(userid);
 	}
 }

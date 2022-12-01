@@ -7,7 +7,6 @@
 
 <nav class="top-bar">
 	<div class="top-bar-left" id="gnb">
-	<!-- <button class="menu-icon" type="button" data-toggle="responsive-menu"></button> -->
 		<ul class="dropdown menu" data-dropdown-menu>
 			<li class="menu-text"><a href="/" class="logo">NAVER</a></li>
 			<li class="has-submenu">
@@ -39,19 +38,19 @@
 		</ul>
 	</div>
             
-     <div class="top-bar-right">
+     <%-- <div class="top-bar-right">
        <ul class="menu">
 	        <c:if test="${empty sid }">
 			<li><a href="${path1 }/member/login.do">로그인</a></li>
 			<li><a href="${path1 }/member/insert.do">회원가입</a></li>
 	        </c:if>
-	        <c:if test="${not empty sid }">  
+	        <c:if test="${not empty sid }">
 			<li><a href="#">로그아웃</a></li>
 			<li><a href="${path1 }/member/info.do">회원정보</a></li>
-	        </c:if>  
+	        </c:if>
 	        <c:if test='${sid eq "admin"}'>
 			<li><a href="#">관리자 페이지</a></li>
 	        </c:if>  
 		</ul>
-	</div>
+	</div> --%>
 </nav>

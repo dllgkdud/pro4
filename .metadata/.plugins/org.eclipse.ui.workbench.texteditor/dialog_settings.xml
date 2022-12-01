@@ -8,13 +8,19 @@
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="content"/>
+		<item key="selection" value="spring-jdbc"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="spring-jdbc"/>
+			<item value="jdbc"/>
+			<item value="mybatis"/>
+			<item value="log4jdbc"/>
+			<item value="log4"/>
+			<item value="log"/>
 			<item value="content"/>
 			<item value="maven"/>
 			<item value="test"/>
@@ -24,12 +30,6 @@
 			<item value="board"/>
 			<item value="seq"/>
 			<item value="servlet"/>
-			<item value="AOP"/>
-			<item value="jdbc"/>
-			<item value="트랜잭션"/>
-			<item value="JSON"/>
-			<item value="samsung"/>
-			<item value="file"/>
 		</list>
 		<list key="replacehistory">
 			<item value="게시판"/>
