@@ -1,3 +1,14 @@
+-- sample 테이블
+create table sample (
+    id varchar2(20),
+    pw varchar2(50)
+)
+select * from sample;
+
+-- 더미데이터
+insert into sample values ('admin', '1234');
+insert into sample values ('lhy', '1111');
+
 desc member;
 select * from member;
 
@@ -56,15 +67,13 @@ create table data (
     dno number primary key,
     dtitle varchar2(300) not null,
     dcontent varchar2(1000) not null,
-    dposter varchar2(255),
-    dfile varchar2(50),
     author VARCHAR2(50),
     visited number default 0,
     regdate date default sysdate
 );
 desc data;
 select * from data;
-
+drop table data;
 
 -- qna 테이블(글번호, 글제목, 글내용, 작성자, 작성일, 조회수, 글그룹번호, 답변수준, 글깊이)
 create table qna(

@@ -22,19 +22,19 @@ public class MemberServiceImpl implements MemberService{
 	
 	//회원정보
 	@Override
-	public MemberDTO getMember(String userid) throws Exception {
-		return memberDao.getMember(userid);
+	public MemberDTO memberDetail(String userid) throws Exception {
+		return memberDao.memberDetail(userid);
 	}
 	
 	//회원가입
 	@Override
 	public void memberInsert(MemberDTO member) throws Exception {
-		memberDao.addMember(member);
+		memberDao.memberInsert(member);
 	}
 	
 	//로그인(controller)
 	@Override
-	public MemberDTO signIn(MemberDTO mdto) throws Exception {
-		return memberDao.signIn(mdto);
+	public MemberDTO logIn(MemberDTO mdto) throws Exception {
+		return memberDao.logIn(mdto);
 	}
 }

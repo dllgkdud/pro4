@@ -16,11 +16,11 @@
 	</update>
 	<!-- 게시판등록 -->
 	<insert id="dataInsert">
-		insert into data values((select nvl(max(dno),0)+1 from data), #{title}, #{content}, , , #{author}, 0, sysdate)
+		insert into data values((select nvl(max(dno),0)+1 from data), #{dtitle}, #{dcontent}, 'admin', 0, sysdate)
 	</insert>
 	<!-- 게시판수정 -->
 	<update id="dataUpdate">
-		update data set title = #{title}, content = #{content} where dno = #{dno}
+		update data set dtitle = #{dtitle}, dcontent = #{dcontent} where dno = #{dno}
 	</update>
 	<!-- 게시판삭제 -->
 	<delete id="dataDelete">

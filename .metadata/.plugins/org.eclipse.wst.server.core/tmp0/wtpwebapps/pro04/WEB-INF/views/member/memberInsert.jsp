@@ -12,7 +12,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>회원가입</title>
 <jsp:include page="../include/head.jsp"></jsp:include>
-<link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
 </head>
 <body>
 <header id="header">
@@ -28,7 +27,7 @@
 					<td>
 						<div class="form-row">
 							<input type="text" name="userid" id="userid" style="width:200px;float:left;" placeholder="아이디" maxlength="50" required />
-							<input type="button" onclick="idCheck()" class="button" value="아이디 중복 체크">
+							<input type="button" id="idCkBtn" onclick="idCheck()" class="button" value="아이디 중복 체크">
 							<input type="hidden" name="idck" id="idck" value="no">
 						</div>
 						<div class="form-idCk">
@@ -100,9 +99,9 @@
 				$("#userid").focus();
 				return;
 			} 
-			var params = {	id : $("#userid").val()	}	//전송되어질 데이터를 객체로 묶음
+			var params = {	userid : $("#userid").val()	}	//전송되어질 데이터를 객체로 묶음
 			$.ajax({
-				url:"${path1 }/check.do",			//아이디가 전송되어질 곳
+				url:"${path1 }/member/check.do",	//아이디가 전송되어질 곳
 				type:"post",						//전송방식
 				dataType:"json",					//데이터 반환 방식
 				data:params,						//전송방식이 post인 경우 객체로 묶어서 전송

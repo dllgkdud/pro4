@@ -14,9 +14,8 @@ public class LombokTest {
 	@Test
 	public void testLombok() {
 		SampleDTO dto = new SampleDTO();
-		dto.setName("ÀÌÇÏ¿µ");
-		dto.setAge(25);
-		dto.setIq(138.5);
+		dto.setId("kkt");
+		dto.setPw("1004");
 		
 		logger.info(dto.toString());
 		//fail("Not yet implemented");

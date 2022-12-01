@@ -109,7 +109,7 @@
 			<version>1.2</version>
 		</dependency>
 	
-		<!-- Test : JUnit 테스트 라이브러리 -->
+		<!-- Test-tool-version : JUnit 테스트 라이브러리 -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -122,7 +122,7 @@
 		    <artifactId>spring-test</artifactId>
 		    <version>5.0.7.RELEASE</version>
 		</dependency>
-		<!-- war 배포 및 패키징 라이브러리 추가 -->
+		<!-- spring maven war 배포 및 패키징 라이브러리 추가 -->
 		<dependency>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-war-plugin</artifactId>
@@ -233,11 +233,6 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
 		</dependency>
-		<dependency>
-			<groupId>org.imgscalr</groupId>
-			<artifactId>imgscalr-lib</artifactId>
-			<version>4.0</version>
-		</dependency>
 		<!-- imgscalr : 이미지편집 라이브러리 -->
 		<dependency>
 		    <groupId>org.imgscalr</groupId>
@@ -287,9 +282,9 @@
 		</dependency>
 		
 		<dependency>
-		    <groupId>org.jumpmind.symmetric.jdbc</groupId>
-		    <artifactId>mariadb-java-client</artifactId>
-		    <version>1.1.1</version>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>2.7.4</version>
 		</dependency>
 		
 		<dependency>

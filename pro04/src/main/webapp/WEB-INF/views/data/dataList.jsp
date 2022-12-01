@@ -33,7 +33,7 @@
 	  	<c:forEach items="${dataList }" var="data" varStatus="status">
 	    <tr>
 	      <td>${status.count }</td>
-	      <td><a href="/data/detail.do?seq=${data.dno }">${data.title }</a></td>
+	      <td><a href="/data/detail.do?dno=${data.dno }">${data.dtitle }</a></td>
 	      <td>${data.regdate }</td>
 	      <td>${data.visited }</td>
 	    </tr>

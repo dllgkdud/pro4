@@ -25,6 +25,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-prototype.min.css">
 <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
+<link rel="shortcut icon" type="image/x-icon" href="https://www.navercorp.com/img/ko/favicon.ico">
+
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.js"></script>
@@ -41,14 +43,37 @@ ul {
     display: block;
     line-height: 20px;
 }
+.menu-text .logo {
+	font-size: 26px;
+	font-weight: 800;
+	color: #4bd16a;
+}
+.top-bar, .top-bar ul {
+	background-color: #fff;
+}
 .has-submenu {
-	padding-top:10px;
+	padding-top: 10px;
 }
 .has-submenu a {
-	
+	color: #222;
+	font-weight: 600;
+}
+.is-submenu-item {
+	clear: both;
+	background-color: #4bd16a;
+}
+.is-submenu-item:hover {
+	background-color: #1ec545;
+}
+.is-submenu-item a {
+	color: #fff;
+	font-size: 14px;
 }
 .dropdown {
 	width:100%;
+}
+.dropdown.menu>li.is-dropdown-submenu-parent>a::after {
+	border-color: #1ec545 transparent transparent;
 }
 .callout.secondary {
 	border:none;
@@ -81,6 +106,7 @@ ul {
 	top: 50%;
 	left: 10%;
 	font-size: 40px;
+	letter-spacing: -1px;
 	color: #fff;
 }
 .slide_title:after {
@@ -93,6 +119,7 @@ ul {
 	top: 75%;
 	left: 10%;
 	font-size: 16px;
+	letter-spacing: -1px;
 	color: #fff;
 }
 .slide_text:after {

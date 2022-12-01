@@ -13,14 +13,14 @@
 	<annotation-driven />
 	
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
-	<!-- 접근 자원에 대한 권한 설정 -->
+	<!-- 접근 자원에 대한 권한 설정(접근이 가능한 디렉토리 설정) -->
 	<resources mapping="/resources/**" location="/resources/" />
 	<resources mapping="/data/**" location="/data/" />
 	
 	<resources mapping="/include/**" location="/WEB-INF/views/include" />
 	<resources mapping="/board/**" location="/WEB-INF/views/board" />
 	<resources mapping="/member/**" location="/WEB-INF/views/member" />
-	<resources mapping="/mem/**" location="/WEB-INF/views/mem" />
+	<resources mapping="/data/**" location="/WEB-INF/views/data" />
 	<resources mapping="/reservate/**" location="/WEB-INF/views/reservate" />
 	<resources mapping="/qna/**" location="/WEB-INF/views/qna" />
 	<resources mapping="/databank/**" location="/WEB-INF/views/databank" />
@@ -30,13 +30,13 @@
 	<resources mapping="/check/**" location="/WEB-INF/views/check" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
-	<!-- 리졸버에 대한 접두사와 접미사 설정 -->
+	<!-- 리졸버(controller에서 받아 jsp를 호출)에 대한 접두사와 접미사 설정 -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<!-- multipart resolver 설정 -->
+	<!-- multipart resolver 설정(jsp로 받아 controller에서 처리함) -->
 	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<!-- 10mb 제한 -->
 		<beans:property name="maxUploadSize" value="10485760" />

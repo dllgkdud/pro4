@@ -35,6 +35,10 @@
 		      <td>${dto.dcontent }</td>
 			</tr>
 			<tr>
+		      <th>Content</th>
+		      <td>${dto.author }</td>
+			</tr>
+			<tr>
 		      <th>RegDate</th>
 		      <td>${dto.regdate }</td>
 		    </tr>
@@ -46,8 +50,8 @@
 	</table>
 	<button class="button-group">
 		<a href="${path1 }/data/list.do" class="button">목록</a>
-		<a href="${path1 }/data/delete.do?seq=${dto.dno}" class="button">삭제</a>		
-		<a href="${path1 }/data/update.do?seq=${dto.dno}" class="button">수정</a>
+		<a href="${path1 }/data/delete.do?dno=${dto.dno}" class="button">삭제</a>		
+		<a href="${path1 }/data/update.do?dno=${dto.dno}" class="button">수정</a>
 	</button>
 </div>
 <footer id="footer" class="footer-nav row expanded collapse">

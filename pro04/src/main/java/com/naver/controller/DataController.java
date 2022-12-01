@@ -59,12 +59,12 @@ public class DataController {
 	public String insert(HttpServletRequest request, Model model) throws Exception {
 		return "data/dataInsert";
 	}
+	
 	@PostMapping("insert.do")
 	public String dataInsert(HttpServletRequest request, Model model) throws Exception {
 		DataDTO dto = new DataDTO();
 		dto.setDtitle(request.getParameter("dtitle"));
 		dto.setDcontent(request.getParameter("dcontent"));
-		dto.setAuthor(request.getParameter("author"));
 		dataService.dataInsert(dto);
 		return "redirect:list.do";
 	}
@@ -107,7 +107,7 @@ public class DataController {
 			//outputStream에 저장된 데이터를 전송한 뒤 초기화
 			out.flush();
 			
-			String callback = request.getParameter("ckEditorFuncNum");
+			String callback = request.getParameter("CKEditorFuncNum");
 			printWriter = response.getWriter();
 			//작성화면
 			String fileUrl = "/data/ckImgSubmit.do?uid="+uid+"&fileName="+fileName;
@@ -115,7 +115,7 @@ public class DataController {
 			//업로드 시 메시지 출력
 			printWriter.println("{\"filename\" : \""+fileName+"\", \"uploaded\" : 1, \"url\":\""+fileUrl+"\"}");
 			printWriter.flush();
-		} catch(Exception e) {
+		} catch(IOException e) {
 			e.printStackTrace();
 		} finally {
 			try {
@@ -154,9 +154,14 @@ public class DataController {
 				out = response.getOutputStream();
 				
 				while((readByte = fileInputStream.read(buf)) != -1) {
-					outputStream.write(imgBuf, 0, length);
-					out.flush();
+					outputStream.write(buf, 0, readByte);
 				}
+				
+				imgBuf = outputStream.toByteArray();
+				length = imgBuf.length;
+				out.write(imgBuf, 0, length);
+				out.flush();
+				
 			} catch(IOException e) {
 				e.printStackTrace();
 			} finally {

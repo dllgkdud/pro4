@@ -1,9 +1,11 @@
 package com.naver.controller;
 
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,17 +17,29 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.naver.dao.SampleDAO;
 import com.naver.dto.MemberDTO;
+import com.naver.dto.SampleDTO;
 
 //http://localhost:8092/sample/ 이후의 모든 것들을 호출하겠다.
 @Controller
 @RequestMapping("/sample/*")
 public class SampleController {
 	
+	@Autowired
+	SampleDAO sampleDao;
+	
 	@RequestMapping("main")
 	public String sample(Locale locale, Model model) throws Exception {
 		//http://localhost:8092/sample/main
 		return "sample/main";
+	}
+	
+	@GetMapping("sample.do")
+	public String sampleList(Model model) throws Exception {
+		List<SampleDTO> sampleList = sampleDao.sampleList();
+		model.addAttribute("sampleList", sampleList);
+		return "sample/sampleList";
 	}
 	
 	@GetMapping("get1")

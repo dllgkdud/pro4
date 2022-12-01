@@ -13,7 +13,7 @@ import com.naver.dto.BoardDTO;
 public class BoardDAOImpl implements BoardDAO{
 	
 	@Autowired
-	private SqlSession sqlSession;
+	SqlSession sqlSession;
 
 	@Override
 	public List<BoardDTO> boardList() throws Exception {

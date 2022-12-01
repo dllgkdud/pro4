@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
+	<!-- The definition of the Root Spring Container shared by all Servlets and Filters(외부자원의 정보를 저장할 부분) -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/spring/root-context.xml</param-value>
@@ -28,6 +28,7 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	
+	<!-- Servlet 요청 시 매핑할 정보 설정(/*.do로 설정 시 .do만 인식하고 호출하며, 나머지는 무시한다.) -->
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>

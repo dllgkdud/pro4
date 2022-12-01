@@ -22,19 +22,19 @@ public class MemberDAOImpl implements MemberDAO{
 	
 	//회원정보
 	@Override
-	public MemberDTO getMember(String userid) {
-		return sqlSession.selectOne("member.getMember",userid);
+	public MemberDTO memberDetail(String userid) {
+		return sqlSession.selectOne("member.memberDetail",userid);
 	}
 	
 	//회원가입
 	@Override
-	public void addMember(MemberDTO member) throws Exception {
+	public void memberInsert(MemberDTO member) throws Exception {
 		sqlSession.insert("member.memberInsert",member);
 	}
 	
 	//로그인(controller)
 	@Override
-	public MemberDTO signIn(MemberDTO mdto) throws Exception {
-		return sqlSession.selectOne("member.signIn", mdto);
+	public MemberDTO logIn(MemberDTO mdto) throws Exception {
+		return sqlSession.selectOne("member.logIn", mdto);
 	}
 }

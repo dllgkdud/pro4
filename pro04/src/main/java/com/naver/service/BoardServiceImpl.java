@@ -12,7 +12,7 @@ import com.naver.dto.BoardDTO;
 public class BoardServiceImpl implements BoardService{
 	
 	@Autowired
-	private BoardDAO boardDAO;
+	BoardDAO boardDAO;
 	
 	@Override
 	public List<BoardDTO> boardList() throws Exception {

@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<c:set var="path1" value="${pageContext.request.contextPath }" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +12,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>회원상세</title>
 <jsp:include page="../include/head.jsp"></jsp:include>
-<link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
 </head>
 <body>
 <header id="header">
@@ -20,13 +20,12 @@
 <div class="content">
 	<div class="row column text-center">
 		<div class="container">
-		<c:if test="${sid=='admin' }">
-			<h2 class="con_tit">정보수정</h2>
+		<%-- <c:if test="${sid=='admin' }">
+			<h2 class="con_tit">회원정보수정</h2>
 		</c:if>
 		<c:if test="${sid!='admin' }">
 			<h2 class="con_tit">마이 페이지</h2>
-		</c:if>
-		<h2>회원가입양식</h2>
+		</c:if> --%>
 		<form action="${path1 }/member/update.do" method="post" onsubmit="return updateCheck(this)">
 			<tbody>
 				<tr>
@@ -71,19 +70,48 @@
 					</td>
 				</tr>
 			</tbody>
-		</table>
-		<button class="button-group">
-			<a href="${path1 }/member/list.do" class="button">목록</a>
-			<input type="submit" class="submit button" value="수정" />
-			<c:if test="${sid=='admin' }">
-				<a href="${path1 }/member/delete.do?id=${member.id }" class="button">회원 강퇴</a>
-			</c:if>
-			<c:if test="${sid!='admin' }">
-				<a href="${path1 }/member/delete.do?id=${sid }" class="button">회원 탈퇴</a>
-			</c:if>
-		</button>
+			<button class="button-group">
+				<a href="${path1 }/member/list.do" class="button">목록</a>
+				<input type="submit" class="submit button" value="수정" />
+				<%-- <c:if test="${sid=='admin' }">
+					<a href="${path1 }/member/delete.do?id=${member.id }" class="button">회원 강퇴</a>
+				</c:if>
+				<c:if test="${sid!='admin' }">
+					<a href="${path1 }/member/delete.do?id=${sid }" class="button">회원 탈퇴</a>
+				</c:if> --%>
+			</button>
 		</form>
+		<script>
+			function updateCheck(f){
+				if(f.userpw.value!=f.pw2.value){
+					alert("비밀번호가 일치하지 않습니다.");
+					f.userpw.focus();
+					return false;
+				}
+			}
+		</script>
+		<script>
+			function findAddr() {
+				new daum.Postcode({
+					oncomplete: function(data) {
+						console.log(data);
+						var roadAddr = data.roadAddress;
+						var jibunAddr = data.jibunAddress;
+						document.getElementById("postcode").value = data.zonecode;
+						if(roadAddr !== '') {
+							document.getElementById("addr1").value = roadAddr;				
+						} else if(jibunAddr !== ''){
+							document.getElementById("addr1").value = jibunAddr;
+						}
+						document.getElementById("addr2").focus();
+					}
+				}).open();
+			}
+		</script>
+		<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+		</div>
 	</div>
+</div>
 <footer id="footer" class="footer-nav row expanded collapse">
 	<jsp:include page="../include/footer.jsp"></jsp:include>
 </footer>

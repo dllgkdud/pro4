@@ -2,10 +2,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%-- <c:set var="path0" value="${pageContext.request.contextPath() }"/> --%>
-<%@ page session="false" %>
 <html>
 <head>
-	<title>Home</title>
+	<title>NAVER Corporation</title>
 	<jsp:include page="include/head.jsp"></jsp:include>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
