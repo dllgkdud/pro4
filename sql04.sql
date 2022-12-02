@@ -27,7 +27,8 @@ create table mem (
     visited number default 0,
     regdate date default sysdate
 );
-select * from mem where userid='admin';
+select * from mem;
+select userid, userpw, username from mem where userid = 'admin';
 select to_char(regdate, 'yyyy-MM-dd HH24:mi:ss') as cdate from mem;
 
 -- board 테이블

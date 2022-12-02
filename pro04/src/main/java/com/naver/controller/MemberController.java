@@ -50,22 +50,20 @@ public class MemberController {
 	//localhost:8092/member/getMember.do
 	//@RequestMapping(value = "getMember.do", method = RequestMethod.GET)
 	//회원상세(관리자)
-		@RequestMapping(value="detail.do", method = RequestMethod.GET)
-		public String memberDetail(@RequestParam String userid, Model model) throws Exception {
-			MemberDTO member = memberService.memberDetail(userid);
-			model.addAttribute("member", member);
-			return "member/memberDetail";
-		}
+	@RequestMapping(value="detail.do", method = RequestMethod.GET)
+	public String memberDetail(@RequestParam String userid, Model model) throws Exception {
+		MemberDTO member = memberService.memberDetail(userid);
+		model.addAttribute("member", member);
+		return "member/memberDetail";
+	}
 	
 	//회원상세(일반)
-		/*
-		 * @RequestMapping(value="info.do", method = RequestMethod.GET)
-		 * public String memberInfo(Model model, HttpServletRequest request) throws Exception { 
-		 * String userid = (String) session.getAttribute("sid"); 
-		 * MemberDTO member = memberService.getMember(userid); model.addAttribute("member", member); 
-		 * return "member/memberInfo"; 
-		 * }
-		 */
+	@RequestMapping(value="info.do", method = RequestMethod.GET)
+	public String memberInfo(Model model, HttpServletRequest request) throws Exception { 
+	String userid = (String) session.getAttribute("sid"); 
+	MemberDTO member = memberService.memberDetail(userid); model.addAttribute("member", member); 
+	return "member/memberInfo"; 
+	}
 	
 	//회원 가입 - 약관 동의 페이지 로딩
 	@RequestMapping(value="agree.do", method=RequestMethod.GET)
@@ -116,16 +114,16 @@ public class MemberController {
 
 	
 	//로그인(폼)
-	@RequestMapping("login.do")
+	@RequestMapping("loginForm.do")
 	public String loginForm(Model model) throws Exception {
 		return "member/memberLogin";
 	}
 	
-	/*
-	 //로그인(controller)
-	@RequestMapping(value="login.do", method=RequestMethod.POST)
-		public String memberLogin(@RequestParam String userid, @RequestParam String userpw,
-		HttpServletRequest request, Model model) throws Exception {
+
+	//로그인(controller)
+	@RequestMapping(value="signin.do", method=RequestMethod.POST) 
+	public String memberSignin(@RequestParam String userid, @RequestParam String userpw,
+	HttpServletRequest request, RedirectAttributes rttr) throws Exception {
 		session.invalidate(); 
 		MemberDTO mdto = new MemberDTO();
 		mdto.setUserpw(userpw); 
@@ -138,15 +136,25 @@ public class MemberController {
 		return "redirect:/"; 
 		} else { 
 		return "redirect:loginForm.do"; 
+		} 
+	}
+	
+	//로그인(service)
+	@RequestMapping(value="login.do", method=RequestMethod.POST)
+	public String memberLogin(MemberDTO mdto, HttpServletRequest request, RedirectAttributes rttr) throws Exception {
+		boolean loginSuccess = memberService.logIn(request);
+		if(loginSuccess) {
+			return "home";
+		} else {
+			return "redirect:loginForm.do";
 		}
 	}
-	 */
 	
 	//로그인(Ajax)
 	@RequestMapping(value="loginCheck.do", method = RequestMethod.POST)
 	public String memberLoginCtrl(MemberDTO mdto, RedirectAttributes rttr) throws Exception { 
 		session.getAttribute("member"); 
-	 	MemberDTO member = memberService.logIn(mdto); 
+	 	MemberDTO member = memberService.loginCheck(mdto);
 	 	boolean mat = pwdEncoder.matches(mdto.getUserpw(), member.getUserpw()); 
 	 	if(mat==true && member!=null) { 
 	 		logger.info("로그인 성공"); 
@@ -156,7 +164,8 @@ public class MemberController {
 	 		return "redirect:/"; 
 	 	} else {
 	 		logger.info("로그인 실패"); session.setAttribute("member", null);
-	 		rttr.addFlashAttribute("msg", false); return "redirect:login.do"; 
+	 		rttr.addFlashAttribute("msg", false); 
+	 		return "redirect:loginForm.do"; 
 	 	}
 	}
 	

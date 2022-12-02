@@ -39,6 +39,10 @@
 ul { 
 	list-style:none; 
 }
+div.row h2 {
+	padding-top: 20px;
+}
+
 .menu>li>a {
     display: block;
     line-height: 20px;
@@ -77,14 +81,10 @@ ul {
 .dropdown.menu>li.is-dropdown-submenu-parent>a::after {
 	border-color: #1ec545 transparent transparent;
 }
-.callout.secondary {
-	border:none;
-    background-color:#f8f9fa;
-    color: #878890;
-}
 .large-4.columns a {
 	color: #878890;
 }
+
 .orbit {
 	display: block;
 	box-sizing: inherit;
@@ -129,12 +129,32 @@ ul {
 	clear: both;
 	display: block;
 }
+
+.callout.secondary {
+	border:none;
+    background-color:#f8f9fa;
+    color: #878890;
+}
+
+.agree { 
+	width: 1000px;
+	white-space:pre-wrap;
+	margin: 10px auto;
+	padding: 24px;
+	border:1px solid #eee; 
+	height:600px;
+	overflow-y:auto; 
+}
+.form-check {
+	text-align: left;
+	padding-left: 100px;
+}
+
 .form-idCk p {
 	text-align: left;
 	margin-bottom: 0;
 	font-size: 14px;
 }
-div.row h2 {
-	padding-top: 20px;
-}
+
+
 </style>

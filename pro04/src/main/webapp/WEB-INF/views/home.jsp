@@ -94,7 +94,7 @@
 			<c:if test="${not empty sid }">
 			<div class="grid-x" style="height:200px">
 				<div class="small-12 cell">
-					<label><strong>${sid }</strong>님 안녕하세요~!</label>
+					<label><strong>${sid }</strong>님</label>
 				</div>
 				<div class="small-12 cell">
 					<label>&nbsp;&nbsp;</label>
@@ -112,7 +112,8 @@
 					<label><span style="display:none">${serverTime }</span></label>
 				</div>
 				<div class="small-12 cell">
-					<label>&nbsp;</label>
+					<a href="${path1 }/member/logout.do" class="button">로그아웃</a>
+					<a href="${path1 }/member/info.do" class="button" style="float:right;">회원정보</a>
 				</div>
 			</div>
 			</c:if>

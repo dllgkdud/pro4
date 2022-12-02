@@ -61,3 +61,14 @@
 11월 30, 2022 11:02:14.28 [13732:2252:1130/110214.280:ERROR:device_event_log_impl.cc(215)] [11:02:14.280] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
 11월 30, 2022 11:03:20.28 [9980:9516:1130/110320.283:ERROR:device_event_log_impl.cc(215)] [11:03:20.283] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
 11월 30, 2022 11:30:28.52 [9980:9516:1130/113028.524:ERROR:CONSOLE(598)] "Uncaught Error: PageHandler_UndoBlocklistPromo_Params missing value for non-nullable field "promoId"", source: chrome://resources/mojo/mojo/public/js/bindings.js (598)
+
+12월 02, 2022 08:40:30.90 NEW SESSION
+12월 02, 2022 08:40:30.90 [6120:4688:1202/084030.903:ERROR:device_event_log_impl.cc(215)] [08:40:30.902] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+12월 02, 2022 08:44:25.93 [11964:9272:1202/084425.939:ERROR:device_event_log_impl.cc(215)] [08:44:25.939] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+12월 02, 2022 08:53:28.27 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+12월 02, 2022 08:53:30.30 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+12월 02, 2022 10:22:45.03 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+12월 02, 2022 11:12:26.46 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+12월 02, 2022 11:36:01.25 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+12월 02, 2022 11:39:02.23 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
+12월 02, 2022 11:40:19.93 [libprotobuf ERROR ..\..\third_party\protobuf\src\google\protobuf\message_lite.cc:133] Can't parse message of type "safe_browsing.ClientDownloadRequest" because it is missing required fields: (cannot determine missing fields for lite message)
