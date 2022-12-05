@@ -17,15 +17,28 @@
 <header id="header">
 	<jsp:include page="../include/header.jsp"></jsp:include>
 </header>
+<div class="grid-x cell">
+	<nav aria-label="You are here:" role="navigation">
+		<ul class="breadcrumbs">
+			<li><a href="${path1 }/">Home</a></li>
+			<li><a href="#">관리자</a></li>
+			<li>
+				<span class="show-for-sr">Current: </span> 
+				<c:if test="${sid=='admin' }">회원정보</c:if>
+				<c:if test="${sid!='admin' }">마이페이지</c:if>
+			</li>
+		</ul>
+	</nav>
+</div>
 <div class="content">
 	<div class="row column text-center">
 		<div class="container">
-		<%-- <c:if test="${sid=='admin' }">
-			<h2 class="con_tit">회원정보수정</h2>
+		<c:if test="${sid=='admin' }">
+			<h2 class="con_tit">회원정보</h2>
 		</c:if>
 		<c:if test="${sid!='admin' }">
-			<h2 class="con_tit">마이 페이지</h2>
-		</c:if> --%>
+			<h2 class="con_tit">마이페이지</h2>
+		</c:if>
 		<form action="${path1 }/member/update.do" method="post" onsubmit="return updateCheck(this)">
 			<tbody>
 				<tr>

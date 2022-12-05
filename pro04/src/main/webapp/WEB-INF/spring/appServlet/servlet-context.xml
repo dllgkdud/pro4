@@ -16,14 +16,14 @@
 	<!-- 접근 자원에 대한 권한 설정(접근이 가능한 디렉토리 설정) -->
 	<resources mapping="/resources/**" location="/resources/" />
 	<resources mapping="/data/**" location="/data/" />
+	<resources mapping="/naver/**" location="/naver/" />
 	
 	<resources mapping="/include/**" location="/WEB-INF/views/include" />
 	<resources mapping="/board/**" location="/WEB-INF/views/board" />
 	<resources mapping="/member/**" location="/WEB-INF/views/member" />
 	<resources mapping="/data/**" location="/WEB-INF/views/data" />
-	<resources mapping="/reservate/**" location="/WEB-INF/views/reservate" />
+	<resources mapping="/naver/**" location="/WEB-INF/views/naver" />
 	<resources mapping="/qna/**" location="/WEB-INF/views/qna" />
-	<resources mapping="/databank/**" location="/WEB-INF/views/databank" />
 	<resources mapping="/util/**" location="/WEB-INF/views/util" />
 	<resources mapping="/sample/**" location="/WEB-INF/views/sample" />
 	<resources mapping="/free/**" location="/WEB-INF/views/free" />

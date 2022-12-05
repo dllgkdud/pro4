@@ -17,6 +17,16 @@
 <header id="header">
 	<jsp:include page="../include/header.jsp"></jsp:include>
 </header>
+<div class="grid-x cell">
+	<nav aria-label="You are here:" role="navigation">
+		<ul class="breadcrumbs">
+			<li><a href="${path1 }/">Home</a></li>
+			<li>
+				<span class="show-for-sr">Current: </span> 회원가입
+			</li>
+		</ul>
+	</nav>
+</div>
 <div class="row column text-center">
 	<h2>가입약관</h2>
 	<article class="agree">

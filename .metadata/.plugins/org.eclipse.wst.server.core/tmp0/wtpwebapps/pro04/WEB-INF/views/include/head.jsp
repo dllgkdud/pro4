@@ -85,6 +85,11 @@ div.row h2 {
 	color: #878890;
 }
 
+.breadcrumbs {
+	margin-top: 10px;
+	margin-left: 40px;
+}
+
 .orbit {
 	display: block;
 	box-sizing: inherit;
@@ -131,9 +136,32 @@ div.row h2 {
 }
 
 .callout.secondary {
-	border:none;
-    background-color:#f8f9fa;
+	border: none;
+    background-color: #f8f9fa;
     color: #878890;
+}
+.callout {
+	margin-top: 50px;
+	border: none;
+	border-right: 1px solid #eee;
+}
+.callout:first-child {
+	font-size: 14px;
+	font-weight: 600;
+}
+.lead {
+	display: block;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.subheader {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.cell-id {
+	font-size: 20px;
 }
 
 .agree { 
@@ -155,6 +183,9 @@ div.row h2 {
 	margin-bottom: 0;
 	font-size: 14px;
 }
-
+.container form p {
+	text-align: left;
+	font-size: 12px;
+}
 
 </style>

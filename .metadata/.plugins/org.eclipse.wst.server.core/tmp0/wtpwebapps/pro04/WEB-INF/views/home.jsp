@@ -51,21 +51,45 @@
         </li>
 	</ul>
 </div>
-<div id="content">
-<h1>Hello world!</h1>
-
-<P>${serverTime}.</P>
-</div>
 <article class="grid-container">
 	<div class="grid-x grid-margin-x">
 		<div class="medium-5 large-3 cell">
+			<div class="cell">
+				<div class="callout">
+					<p>CAREER</p>
+					<p class="lead">네이버페이 앱, 구글플레이 '2022 올해를 빛낸 인기 앱' 선정… 3개 부문 수상</p>
+					<p class="subheader">네이버페이 앱, 구글플레이 '2022 올해를 빛낸 인기 앱' 선정… 3개 부문 수상
+					- 구글플레이 ‘2022 올해를 빛낸 인기 앱∙일상생활 앱∙웨어 앱 등 3개 부문 수상
+					- 네이버페이 앱∙워치 앱, 기존 네이버페이 사용자로부터 뜨거운 호응…앱을 통한 현장결제 누적 결제건수 1900만건, 이용도 또한 네이버 앱보다 2배 더 높아</p>
+				</div>
+			</div>
+        </div>
+        <div class="medium-5 large-3 cell">
+			<div class="cell">
+				<div class="callout">
+					<p>NEWS</p>
+					<p class="lead">수 많은 사용자의 목소리에서<br>내 일의 자부심과 무게를 느낍니다.</p>
+					<p class="subheader"><a href="https://recruit.navercorp.com" class="summary_link" target="_blank">네이버에서 일한다는 것</a></p>
+				</div>
+			</div>
+        </div>
+        <div class="medium-5 large-3 cell">
+			<div class="cell">
+				<div class="callout">
+					<p>STOCK</p>
+					<p class="lead">185,500원</p>
+					<p class="subheader">▼ 2,000<br>KRX 2022.12.02</p>
+				</div>
+			</div>
+        </div>
+		<div class="medium-5 large-3 cell">
 			<div class="callout secondary">
-			<c:if test="${!empty msg }">
+			<%-- <c:if test="${!empty msg }">
 			<script>
 				alert("로그인 실패");
 				document.loginForm.userid.focus();
 			</script>
-			</c:if>
+			</c:if> --%>
 			<c:if test="${empty sid }">
 			<form action="${path1 }/member/loginCheck.do" method="post" name="loginForm">
 				<div class="grid-x">
@@ -80,8 +104,10 @@
 							<input type="password" name="userpw" id="userpw"  class="single100" placeholder="비밀번호 입력" required>
 							<!--  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  -->
 						</label>
-						<button type="submit" class="button">로그인</button>
-						<a href="${path1 }/member/agree.do" class="button" style="float:right;">회원가입</a>
+						<c:if test="${empty sid }">
+							<button type="submit" class="button">로그인</button>
+							<a href="${path1 }/member/agree.do" class="button" style="float:right;">회원가입</a>
+						</c:if>
 					</div>
 				</div>
 			</form>
@@ -94,7 +120,12 @@
 			<c:if test="${not empty sid }">
 			<div class="grid-x" style="height:200px">
 				<div class="small-12 cell">
-					<label><strong>${sid }</strong>님</label>
+					<label>
+						<strong class="cell-id">${sid }</strong>&nbsp;님
+						<c:if test='${sid eq "admin"}'>
+				          	<a href="${path1 }/member/list.do" class="button" style="float:right;">관리자</a>
+				        </c:if>
+					</label>
 				</div>
 				<div class="small-12 cell">
 					<label>&nbsp;&nbsp;</label>
@@ -104,20 +135,86 @@
 						<c:set var="now" value="<%=new java.util.Date() %>" />
 						<fmt:formatDate value="${now }" pattern="yyyy년 MM월 dd일" type="date"/>
 					</label>
-				</div>
-				<div class="small-12 cell">
 					<label><fmt:formatDate value="${now }" pattern="a h:mm" type="date"/></label>
-				</div>
-				<div class="small-12 cell">
 					<label><span style="display:none">${serverTime }</span></label>
 				</div>
 				<div class="small-12 cell">
-					<a href="${path1 }/member/logout.do" class="button">로그아웃</a>
-					<a href="${path1 }/member/info.do" class="button" style="float:right;">회원정보</a>
+					<c:if test="${not empty sid }"> 
+						<a href="${path1 }/member/logout.do" class="button">로그아웃</a>
+						<a href="${path1 }/member/info.do" class="button" style="float:right;">회원정보</a>
+        			</c:if>
 				</div>
 			</div>
 			</c:if>
 			</div>
+		</div>
+	</div>
+	<div class="">
+		<p class="lead"></p>
+    </div>
+    <div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3">
+		<div class="cell">
+	        <div class="callout">
+				<p class="pic"><img src="https://www.navercorp.com/img/ko/main/img_main_content13.png" alt="N robot"></p>
+				<p class="lead">N 로봇</p>
+				<p class="subheader">가장 최신의 로봇 기술, 네이버 로봇</p>
+			</div>
+		</div>
+		<div class="cell">
+			<div class="callout">
+				<p class="pic"><img src="https://www.navercorp.com/img/ko/main/img_main_content14.png" alt="Clova Note"></p>
+				<p class="lead">클로바노트</p>
+				<p class="subheader">눈으로 보며 듣는 음성 기록</p>
+	        </div>
+		</div>
+		<div class="cell">
+			<div class="callout">
+				<p class="pic"><img src="https://www.navercorp.com/img/ko/main/img_main_content15.png" alt="Naver Pay"></p>
+				<p class="lead">네이버 페이 앱</p>
+				<p class="subheader">현장결제, 멤버십적립, 송금까지 한번에</p>
+	        </div>
+		</div>
+		<div class="cell">
+			<div class="callout">
+				<p class="pic"><img src="https://www.navercorp.com/img/ko/main/img_main_content4.png" alt="Naver Whale"></p>
+				<p class="lead">네이버 웨일</p>
+				<p class="subheader">인터넷의 새로운 시작</p>
+	        </div>
+		</div>
+		<div class="cell">
+			<div class="callout">
+				<p class="pic"><img src="https://www.navercorp.com/img/ko/main/img_main_content18.png" alt="Naver Works"></p>
+				<p class="lead">네이버웍스</p>
+				<p class="subheader">네이버웍스는 비즈니스 커뮤니케이션을 넓힙니다.</p>
+	        </div>
+		</div>
+		<div class="cell">
+			<div class="callout">
+				<p class="pic"><img src="https://www.navercorp.com/img/ko/main/img_main_content19.png" alt="Naver Cloud"></p>
+				<p class="lead">네이버클라우드</p>
+				<p class="subheader">모든 비즈니스를 가능하게 하는 네이버클라우드</p>
+	        </div>
+		</div>
+		<div class="cell">
+			<div class="callout">
+				<p class="pic"><img src="https://www.navercorp.com/img/ko/main/img_main_content7.png" alt="Naver Webtoon"></p>
+				<p class="lead">네이버 웹툰</p>
+				<p class="subheader">매일매일 새로운 재미</p>
+	        </div>
+		</div>
+		<div class="cell">
+			<div class="callout">
+				<p class="pic"><img src="https://www.navercorp.com/img/ko/main/img_main_content8.png" alt="Project Flower"></p>
+				<p class="lead">프로젝트 꽃</p>
+				<p class="subheader">가치의 발견과 성장</p>
+	        </div>
+		</div>
+		<div class="cell">
+			<div class="callout">
+				<p class="pic"><img src="https://www.navercorp.com/img/ko/main/img_main_content17.png" alt="Naver Now"></p>
+				<p class="lead">NOW</p>
+				<p class="subheader">We Live NOW</p>
+	        </div>
 		</div>
 	</div>
 </article>
