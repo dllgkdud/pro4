@@ -1,7 +1,0 @@
-package com.naver.util;
-
-
-public class MemberVO {
-	@Id			//primary key인 필드에 지정
-	
-}

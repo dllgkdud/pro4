@@ -17,6 +17,18 @@
 <header id="header">
 	<jsp:include page="../include/header.jsp"></jsp:include>
 </header>
+<div class="grid-x cell">
+	<nav aria-label="You are here:" role="navigation">
+		<ul class="breadcrumbs">
+			<li><a href="#">홈</a></li>
+			<li><a href="#">서비스</a></li>
+			<li><a href="#">공지사항</a></li>
+			<li>
+				<span class="show-for-sr">Current: </span> 공지사항목록
+			</li>
+		</ul>
+	</nav>
+</div>
 <div class="row column text-center">
 	<h2>공지사항목록</h2>
 	<hr>

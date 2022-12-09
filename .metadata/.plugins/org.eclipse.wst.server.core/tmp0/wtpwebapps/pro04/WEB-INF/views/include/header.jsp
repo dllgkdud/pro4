@@ -12,15 +12,15 @@
 			<li class="has-submenu">
 				<a href="#">네이버</a>
 				<ul class="submenu menu vertical" data-submenu>
-					<li><a href="#">소개</a></li>
-					<li><a href="#">연혁</a></li>
-					<li><a href="#">CONTACT</a></li>
+					<li><a href="${path1 }/naver/profile.do">네이버 소개</a></li>
+					<li><a href="${path1 }/naver/history1.do">주요 연혁</a></li>
+					<li><a href="${path1 }/naver/contact.do">CONTACT</a></li>
 				</ul>
 			</li>
 			<li class="has-submenu">
 				<a href="#">가치실현</a>
 				<ul class="submenu menu vertical" data-submenu>
-					<li><a href="#">원칙</a></li>
+					<li><a href="${path1 }/service/value.do">원칙</a></li>
 					<li><a href="#">정책</a></li>
 					<li><a href="#">임팩트</a></li>
 				</ul>

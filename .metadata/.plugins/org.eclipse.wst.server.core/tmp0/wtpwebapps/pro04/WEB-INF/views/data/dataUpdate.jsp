@@ -18,8 +18,20 @@
 <header id="header">
 	<jsp:include page="../include/header.jsp"></jsp:include>
 </header>
+<div class="grid-x cell">
+	<nav aria-label="You are here:" role="navigation">
+		<ul class="breadcrumbs">
+			<li><a href="#">홈</a></li>
+			<li><a href="#">서비스</a></li>
+			<li><a href="#">자료실</a></li>
+			<li>
+				<span class="show-for-sr">Current: </span> 자료실수정
+			</li>
+		</ul>
+	</nav>
+</div>
 <div class="row column text-center">
-	<h2>게시판작성</h2>
+	<h2>자료실수정</h2>
 	<hr>
 	<form action="${path1 }/data/update.do" method="post">
 		<table>

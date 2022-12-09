@@ -1,8 +1,0 @@
-package com.naver.util;
-
-import org.springframework.validation.Validator;
-
-public class MemberValidator implements Validator{
-	System.out.println("validate action");
-	Member member = (Member)
-
