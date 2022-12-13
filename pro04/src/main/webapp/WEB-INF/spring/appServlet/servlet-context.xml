@@ -17,7 +17,8 @@
 	<resources mapping="/resources/**" location="/resources/" />
 	<resources mapping="/naver/**" location="/naver/" />
 	<resources mapping="/service/**" location="/service/" />
-	<resources mapping="/data/**" location="/data/" />	
+	<resources mapping="/news/**" location="/news/" />
+	<resources mapping="/data/**" location="/data/" />
 	
 	<resources mapping="/include/**" location="/WEB-INF/views/include" />
 	<resources mapping="/board/**" location="/WEB-INF/views/board" />
@@ -26,6 +27,7 @@
 	<resources mapping="/naver/**" location="/WEB-INF/views/naver" />
 	<resources mapping="/service/**" location="/WEB-INF/views/service" />
 	<resources mapping="/qna/**" location="/WEB-INF/views/qna" />
+	<resources mapping="/news/**" location="/WEB-INF/views/news" />
 	<resources mapping="/util/**" location="/WEB-INF/views/util" />
 	<resources mapping="/sample/**" location="/WEB-INF/views/sample" />
 	<resources mapping="/free/**" location="/WEB-INF/views/free" />
@@ -58,13 +60,13 @@
 	<beans:bean id="adminInterceptor" class="com.naver.util.AdminInterceptor" />
 	<interceptors>
 		<interceptor>
-			<mapping path="/free/**" />
+			<mapping path="/data/**" />
 			<beans:ref bean="sampleInterceptor" />
 		</interceptor>
 		<interceptor>
-			<mapping path="/free/insert.do" />
-			<mapping path="/free/update.do" />
-			<mapping path="/free/delete.do" />
+			<mapping path="/data/insert.do" />
+			<mapping path="/data/update.do" />
+			<mapping path="/data/delete.do" />
 			<beans:ref bean="loginInterceptor" />
 		</interceptor>
 		<interceptor>

@@ -99,7 +99,23 @@ height:600px; overflow-y:auto; }
 #his-year { font-size: 22px; }
 #his-month { width: 100px; text-align: right; }
 
+.row h2 { margin-bottom: 50px; }
+.thumbnail { -webkit-box-shadow: none; box-shadow: none; }
+.content-box-report { max-height: 350px; margin-bottom: 50px; overflow: hidden; text-overflow: ellipsis; }
+.content-box-report a { font-weight: 600; color: #222; letter-spacing: -1px; }
+.content-box-report a:hover { text-decoration: underline; }
+.content table { margin-top: 30px; }
+.content_box { border: none; }
+.content_box tr:last-child { text-align: left; border-top: 1px solid #222; }
+.content_box td { background-color: #fff; }
+.content_box tr:nth-child(2) td { font-size: 20px; font-weight: 600; color: #00c73c; }
+.content_box tr:last-child td { padding-top: 50px; }
+
 #val-content { margin: 60px 0; padding-right: 40px; color: #606167; font-size: 16px; line-height: 1.8; letter-spacing: -1px; }
 .val-image { position: relative; width: 100%; }
 .gif { position: absolute; top: 400px; left:0; }
+.large-9 th { width: 100px; }
+.content_box_button { border-bottom: 1px solid #222; }
+.content_box_button td, .btn_text { padding: 1.5rem; text-align: right; font-size: 14px; }
+.content_box_button td a { margin-right: 20px; }
 </style>

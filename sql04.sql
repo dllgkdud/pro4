@@ -90,5 +90,23 @@ create table qna(
 );
 desc qna;
 select * from qna;
+drop table qna;
+
+-- news 테이블(사진 및 문서를 업로드하는 홍보 테이블 - 홍보번호, 홍보제목, 홍보내용, 이미지, 자료파일, 홍보등록일)
+create table news (
+    nno number primary key,
+    ntitle varchar2(300) not null,
+    ncontent varchar2(3000) not null,
+    regdate date default sysdate
+);
+desc news;
+select * from news;
+drop table news;
+
+-- 더미데이터
+insert into news values(1, '네이버웹툰, 2022년 결산 서비스 ‘2022 위드 웹툰(with WEBTOON) 나의 웹툰 리포트’ 공개', 
+'네이버웹툰과 시리즈는 오늘(12일)부터 31일까지 웹과 앱 이용자 개개인의 열람 이력을 분석한 ‘2022 위드 웹툰 나의 웹툰 리포트(이하, ‘웹툰 리포트’)’와 ‘2022 위드 시리즈, 나의 시리즈 리포트(이하, ‘시리즈 리포트’)’를 앱(APP)에서 각각 공개한다. 
+이번 리포트는 2022년 1월부터10월까지 이용자의 열람 이력을 분석해 맞춤형 연말 결산 데이터를 제공한 것이 특징이다. ', sysdate);
+insert into news values((select nvl(max(seq),0)+1 from board), '샘플로 작성한 제목2', '샘플로 작성한 내용2입니다.', sysdate);
 
 commit;

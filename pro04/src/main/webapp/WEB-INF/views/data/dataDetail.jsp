@@ -58,7 +58,7 @@
 		    <th>Visited</th>
 		      <td>${dto.visited }</td>
 		    </tr>
-	  </tbody>
+	  	</tbody>
 	</table>
 	<button class="button-group">
 		<a href="${path1 }/data/list.do" class="button">목록</a>

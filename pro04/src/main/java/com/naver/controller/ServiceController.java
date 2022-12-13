@@ -13,4 +13,13 @@ public class ServiceController {
 		return "service/value";
 	}
 	
+	@RequestMapping(value="business.do", method=RequestMethod.GET)
+	public String serviceBus() throws Exception {
+		return "service/business";
+	}
+	
+	@RequestMapping(value="impact.do", method=RequestMethod.GET)
+	public String serviceImp() throws Exception {
+		return "service/impact";
+	}
 }

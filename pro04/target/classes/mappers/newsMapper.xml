@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="news">
+	<!-- 홍보목록 -->
+	<select id="newsList" resultType="com.naver.dto.NewsDTO">
+		select * from news
+	</select>
+	<!-- 홍보상세 -->
+	<!-- ,jdbcType="데이터타입" number함수에 null 포함이 가능하도록 한다. -->
+	<select id="newsDetail" resultType="com.naver.dto.NewsDTO">
+		select * from news where nno = #{nno}
+	</select>
+	<!-- 홍보등록 -->
+	<insert id="newsInsert">
+		insert into news values((select nvl(max(nno),0)+1 from news), #{ntitle}, #{ncontent}, sysdate)
+	</insert>
+	<!-- 홍보수정 -->
+	<update id="newsUpdate">
+		update news set ntitle = #{ntitle}, ncontent = #{ncontent} where nno = #{nno}
+	</update>
+	<!-- 홍보삭제 -->
+	<delete id="newsDelete">
+		delete from news where nno = #{nno}
+	</delete>
+</mapper>

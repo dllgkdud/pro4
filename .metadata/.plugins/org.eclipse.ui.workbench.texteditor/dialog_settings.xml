@@ -8,30 +8,37 @@
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="table"/>
+		<item key="selection" value=""/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="dcontent"/>
+			<item value="dtitle"/>
+			<item value="dno"/>
+			<item value="data"/>
+			<item value="content"/>
+			<item value="dctitle"/>
+			<item value="게시판"/>
+			<item value="70"/>
+			<item value="vw"/>
 			<item value="table"/>
 			<item value="his-sub-title"/>
 			<item value="cell"/>
 			<item value="row"/>
 			<item value="form-idCk"/>
 			<item value="form-idck"/>
-			<item value="form"/>
-			<item value="idck"/>
-			<item value="large-4"/>
-			<item value="callout"/>
-			<item value="spring-jdbc"/>
-			<item value="jdbc"/>
-			<item value="mybatis"/>
-			<item value="log4jdbc"/>
-			<item value="log4"/>
 		</list>
 		<list key="replacehistory">
+			<item value="news"/>
+			<item value="ntitle"/>
+			<item value="ncontent"/>
+			<item value="nno"/>
+			<item value="홍보"/>
+			<item value="100"/>
+			<item value="px"/>
 			<item value="게시판"/>
 			<item value="data"/>
 			<item value="dno"/>

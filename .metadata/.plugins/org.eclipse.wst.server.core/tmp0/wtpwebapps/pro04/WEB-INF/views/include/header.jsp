@@ -21,11 +21,11 @@
 				<a href="#">가치실현</a>
 				<ul class="submenu menu vertical" data-submenu>
 					<li><a href="${path1 }/service/value.do">원칙</a></li>
-					<li><a href="#">정책</a></li>
-					<li><a href="#">임팩트</a></li>
+					<li><a href="${path1 }/service/business.do">정책</a></li>
+					<li><a href="${path1 }/service/impact.do">임팩트</a></li>
 				</ul>
 			</li>
-			<li class="has-submenu"><a href="#">홍보</a></li>
+			<li class="has-submenu"><a href="${path1 }/news/list.do">홍보</a></li>
 			<li class="has-submenu">
 				<a href="#">서비스</a>
 				<ul class="submenu menu vertical" data-submenu>

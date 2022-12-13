@@ -86,7 +86,7 @@
 			</tbody>
 		</table>
 		<button class="button-group">
-			<a href="${path1 }/member/list.do" class="button">목록</a>
+			<a href="${path1 }/" class="button">취소</a>
 			<input type="submit" class="submit button" value="등록" />
 		</button>
 	</form>
