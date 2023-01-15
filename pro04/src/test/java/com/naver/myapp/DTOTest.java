@@ -14,9 +14,9 @@ public class DTOTest {
 		MemberDTO dto = new MemberDTO();
 		dto.setUserid("lhy");
 		dto.setUserpw("1234");
-		dto.setUsername("ÀÌÇÏ¿µ");
+		dto.setUsername("test");
 		dto.setTel("01012341234");
-		dto.setAddr1("ÀÏ»êµ¿±¸ ÀåÇ×µ¿");
+		dto.setAddr1("ï¿½Ï»êµ¿ï¿½ï¿½ ï¿½ï¿½ï¿½×µï¿½");
 		dto.setUserpt(100);
 		dto.setRegdate("2022-11-23");
 		
