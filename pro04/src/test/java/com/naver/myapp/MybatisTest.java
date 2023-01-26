@@ -24,14 +24,15 @@ public class MybatisTest {
 		logger.info("sqlFactory: "+sqlFactory);
 	}
 	
-	@Test
-	public void mybatisTest() throws Exception {
-		
-		try(SqlSession session = sqlFactory.openSession()){
-			logger.info("MyBatis Connection success! session : "+session);
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
+	/*@Test 
+	 *public void mybatisTest() throws Exception {
+	 * 
+	 * try(SqlSession session = sqlFactory.openSession()){
+	 * logger.info("MyBatis Connection success! session : "+session);
+	 * } catch(Exception e) { 
+	 * e.printStackTrace(); 
+	 * } 
+	 * }
+	 */
 
 }
