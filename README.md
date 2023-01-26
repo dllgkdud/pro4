@@ -46,7 +46,7 @@
  - Editor : `Spring Tool Suite 3`
  - DBMS : `Oracle`
  - DBMS Model : `MVC Level 2`
- - Framework(front) : `Foundation CSS Framework`
+ - Framework(front) : `Foundation`
  - Framework(back) : `Spring Legacy`
  - Security : `BCryptPasswordEncoder`
  - Target : `Web Browser`
@@ -102,6 +102,10 @@
   ![회원가입](./img/3.1.png "가입양식(주소입력)")
   ![회원가입](./img/3.2.png "가입양식(아이디중복)")
 
+* **홍보 페이지**
+  * `가입약관`의 `필수 선택` 후 `가입양식` 페이지로 이동한다.
+  ![홍보](./img/2.png "가입약관")
+
 </details>
 
 ## UI TEST
@@ -110,7 +114,7 @@
 <details>
 <summary>계획서/보고서_다운로드</summary>
 
-[[pro4]UI TEST 계획서.pdf](https://github.com/dllgkdud/pro4/files/10420663/pro4.UI.TEST.pdf "계획서_다운로드")
-[[pro4]UI TEST 결과보고서.pdf](https://github.com/dllgkdud/pro4/files/10420665/pro4.UI.TEST.pdf "보고서_다운로드")
+  ![[pro4]UI TEST 계획서.pdf](https://github.com/dllgkdud/pro4/files/10420663/pro4.UI.TEST.pdf "계획서_다운로드")
+  ![[pro4]UI TEST 결과보고서.pdf](https://github.com/dllgkdud/pro4/files/10420665/pro4.UI.TEST.pdf "보고서_다운로드")
 
 </details>
