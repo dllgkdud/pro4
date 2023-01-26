@@ -23,7 +23,7 @@ public class JDBCConn {
 	public void testConnection() {
 		try {
 			Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "1234");
-			logger.info("오라클 연결이 정상적으로 완료되었습니다.");
+			logger.info("ok");
 		} catch(Exception e) {
 			fail("Not yet implemented");
 		}		

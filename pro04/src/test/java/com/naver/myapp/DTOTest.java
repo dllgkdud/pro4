@@ -16,7 +16,7 @@ public class DTOTest {
 		dto.setUserpw("1234");
 		dto.setUsername("test");
 		dto.setTel("01012341234");
-		dto.setAddr1("�ϻ굿�� ���׵�");
+		dto.setAddr1("ilsan");
 		dto.setUserpt(100);
 		dto.setRegdate("2022-11-23");
 		
