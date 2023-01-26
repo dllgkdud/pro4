@@ -7,13 +7,13 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class MemberVO {
-	@Id			//primary keyÀÎ ÇÊµå¿¡ ÁöÁ¤
-	@Size(min=5, max=12, message="¾ÆÀÌµð´Â 5~12ÀÚ ³»¿Ü·Î ÀÛ¼º")
+	@Id			//primary key
+	@Size(min=5, max=12, message="ï¿½ï¿½ï¿½Ìµï¿½ï¿½ 5~12ï¿½ï¿½ ï¿½ï¿½ï¿½Ü·ï¿½ ï¿½Û¼ï¿½")
 	String id;
 	
 	@Column
 	@NotNull
-	@Size(min=8, max=12, message="ºñ¹Ð¹øÈ£´Â 8~12ÀÚ ³»¿Ü·Î ÀÛ¼º")
+	@Size(min=8, max=12, message="ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ 8~12ï¿½ï¿½ ï¿½ï¿½ï¿½Ü·ï¿½ ï¿½Û¼ï¿½")
 	@Pattern(regexp="(^[A-Za-z0-9] {8,12}$)")	//(^?=.*[A-Za-z])(?=.*[0,9])(?=.*[$@$!%*#?&])[A-Za-z[0-9]$@$!%*#?&]{8,12}$)
 	String pw;
 

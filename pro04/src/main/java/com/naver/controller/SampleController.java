@@ -21,7 +21,7 @@ import com.naver.dao.SampleDAO;
 import com.naver.dto.MemberDTO;
 import com.naver.dto.SampleDTO;
 
-//http://localhost:8092/sample/ 이후의 모든 것들을 호출하겠다.
+//http://localhost:8092/sample/
 @Controller
 @RequestMapping("/sample/*")
 public class SampleController {
@@ -44,29 +44,29 @@ public class SampleController {
 	
 	@GetMapping("get1")
 	public String get1(HttpServletRequest request, Model model) throws Exception {
-		//DTO에서 데이터 불러오기
+		//DTO
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		//데이터저장 후 forward
+
 		model.addAttribute("id", id);
 		model.addAttribute("pw", pw);
-		//전송
+
 		return "sample/get1";
 	}
 	
 	@RequestMapping(value="get2", method=RequestMethod.GET)
 	public String get2(HttpServletRequest request, Model model) throws Exception {
-		//DTO에서 데이터 불러오기
+		//DTO
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		//데이터 저장 후 forward
+
 		model.addAttribute("id", id);
 		model.addAttribute("pw", pw);
-		//전송
+
 		return "sample/get2";
 	}
 	
-	//@RequestParam("필드명")은 request.getParameter("필드명")을 대신하기에 생략이 가능하다.
+	//@RequestParam("id") string id, request.getParameter("")
 	@RequestMapping(value="get3", method=RequestMethod.GET)
 	public String get3(@RequestParam("id") String id, @RequestParam("pw") String pw, Model model) throws Exception {
 		model.addAttribute("id", id);
@@ -74,7 +74,7 @@ public class SampleController {
 		return "sample/get3";
 	}
 	
-	//POST에서만 가능
+	//POST
 	@RequestMapping(value="get4", method=RequestMethod.GET)
 	public String get4(MemberDTO member, Model model) throws Exception {
 		return "sample/get4";	//${member.id}, ${member.pw}
@@ -85,7 +85,7 @@ public class SampleController {
 		return "sample/get5";	//${mem.id}, ${mem.pw}
 	}
 	
-	//GET방식에서 주로 활용하며, Spring에서만 전달가능한 방식
+	//GET, Spring
 	@RequestMapping("get6/{id}/{pw}")
 	public String get6(@PathVariable("id") String id,@PathVariable("pw") String pw, Model model) throws Exception {
 		model.addAttribute("id", id);
@@ -102,29 +102,29 @@ public class SampleController {
 	
 	@PostMapping("post1")
 	public String post1(HttpServletRequest request, Model model) throws Exception {
-		//DTO에서 데이터 불러오기
+		//DTO
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		//데이터저장 후 forward
+
 		model.addAttribute("id", id);
 		model.addAttribute("pw", pw);
-		//전송
+
 		return "sample/post1";
 	}
 	
 	@RequestMapping(value="post2", method=RequestMethod.POST)
 	public String post2(HttpServletRequest request, Model model) throws Exception {
-		//DTO에서 데이터 불러오기
+		//DTO
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		//데이터 저장 후 forward
+
 		model.addAttribute("id", id);
 		model.addAttribute("pw", pw);
-		//전송
+
 		return "sample/post2";
 	}
 	
-	//@RequestParam("필드명")은 request.getParameter("필드명")을 대신하기에 생략이 가능하다.
+	//@RequestParam("") request.getParameter("")
 	@RequestMapping(value="post3", method=RequestMethod.POST)
 	public String post3(@RequestParam("id") String id, @RequestParam("pw") String pw, Model model) throws Exception {
 		model.addAttribute("id", id);
@@ -132,7 +132,7 @@ public class SampleController {
 		return "sample/post3";
 	}
 	
-	//POST에서만 가능
+	//POST
 	@RequestMapping(value="post4", method=RequestMethod.POST)
 	public String post4(MemberDTO member, Model model) throws Exception {
 		return "sample/post4";	//${member.id}, ${member.pw}
@@ -143,7 +143,7 @@ public class SampleController {
 		return "sample/post5";	//${mem.id}, ${mem.pw}
 	}
 	
-	//GET방식에서 주로 활용하며, Spring에서만 전달가능한 방식
+	//GET, Spring
 	@RequestMapping("post6/{id}/{pw}")
 	public String post6(@PathVariable("id") String id,@PathVariable("pw") String pw, Model model) throws Exception {
 		model.addAttribute("id", id);

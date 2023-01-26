@@ -13,17 +13,17 @@ public class CheckController2 {
 	
 	@RequestMapping(value="check6", method=RequestMethod.GET)
 	public String getCheck6(MemberVO memberVO) throws Exception {
-		//Àü¼Û
+		//ï¿½ï¿½ï¿½ï¿½
 		return "check/check6";
 	}
-	//Hibernate ¿Í spring form¿¡ ÀÇÇÑ °ËÁõ - @initbinder¿Í @hibernate´Â °°ÀÌ »ç¿ëÇÒ ¼ö ¾ø´Ù.
+	//Hibernate spring form @initbinder @hibernate
 	@RequestMapping(value="check6.do", method=RequestMethod.POST)
 	public String postCheck6(@Valid MemberVO memberVO, BindingResult result) throws Exception {
 		String path = "check/result6";
 		if(result.hasErrors()) {
 			path="check/error";
 		}
-		//Àü¼Û
+
 		return path;
 	}
 }

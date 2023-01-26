@@ -21,7 +21,6 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 	
-	//공지사항목록
 	//@RequestMapping(value="list.do", method=RequestMethod.GET)
 	@GetMapping("list.do")
 	public String getBoardList(Model model) throws Exception {
@@ -30,7 +29,6 @@ public class BoardController {
 		return "board/boardList";
 	}
 	
-	//공지사항상세
 	@GetMapping("detail.do")	//detail.do?seq=1
 	public String getBoardDetail(HttpServletRequest request, Model model) throws Exception {
 		int seq = Integer.parseInt(request.getParameter("seq"));
@@ -39,7 +37,6 @@ public class BoardController {
 		return "board/boardDetail";
 	}
 	
-	//공지사항추가
 	@GetMapping("insert.do")
 	public String insert(HttpServletRequest request, Model model) throws Exception {
 		return "board/boardInsert";
@@ -53,7 +50,6 @@ public class BoardController {
 		return "redirect:list.do";
 	}
 	
-	//공지사항삭제
 	@GetMapping("delete.do")
 	public String boardDelete(HttpServletRequest request, Model model) throws Exception {
 		int seq = Integer.parseInt(request.getParameter("seq"));
@@ -61,7 +57,6 @@ public class BoardController {
 		return "redirect:list.do";
 	}
 	
-	//공지사항수정
 	@GetMapping("update.do")
 	public String update(HttpServletRequest request, Model model) throws Exception {
 		int seq = Integer.parseInt(request.getParameter("seq"));
@@ -69,6 +64,7 @@ public class BoardController {
 		model.addAttribute("dto", dto);
 		return "board/boardUpdate";
 	}
+	
 	@PostMapping("update.do")
 	public String boardUpdate(HttpServletRequest request, Model model) throws Exception {
 		int seq = Integer.parseInt(request.getParameter("seq"));
