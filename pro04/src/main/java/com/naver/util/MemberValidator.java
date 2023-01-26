@@ -12,8 +12,8 @@ public class MemberValidator implements Validator{
 		System.out.println("validate action");
 		Member member = (Member)obj;
 		
-		ValidationUtils.rejectIfEmpty(error, "id", "¾ÆÀÌµð¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
-		ValidationUtils.rejectIfEmpty(error, "pw", "ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+		ValidationUtils.rejectIfEmpty(error, "id", "member.id.empty");
+		ValidationUtils.rejectIfEmpty(error, "pw", "member.pw.empty");
 		
 		Pattern pattern = Pattern.compile("^[a-zA-Z0-9]{8,12}$", Pattern.CASE_INSENSITIVE);
 		if(!(pattern.matcher(member.getPw()).matches())) {
@@ -23,22 +23,22 @@ public class MemberValidator implements Validator{
         String id = member.getId();
         String pw = member.getPw();
         
-        //id°¡ ºñ¾ú´ÂÁö È®ÀÎ
+        //idï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
         if(id == null || id.trim().isEmpty()) {
             error.rejectValue("id", "not value");
         }
         
-        //pw°¡ ºñ¾ú´ÂÁö È®ÀÎ
+        //pwï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
         if(pw == null || pw.trim().isEmpty()) {
             error.rejectValue("pw", "not value");
         }
         
-        //id°¡ 8~12 ÀÌÇÏÀÎÁö È®ÀÎ
+        //idï¿½ï¿½ 8~12 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
         else if(id.length() >= 8 && id.length() <= 12) {
             error.rejectValue("id", "bad size"); 
         }
         
-        //pw°¡ 6~12ÀÚ ÀÌÇÏÀÎÁö È®ÀÎ
+        //pwï¿½ï¿½ 6~12ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
         if(pw.length() >= 6 && pw.length() <= 12) {
             error.rejectValue("pw", "bad size");
         }

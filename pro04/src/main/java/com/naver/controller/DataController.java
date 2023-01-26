@@ -36,7 +36,6 @@ public class DataController {
 	@Autowired
 	private DataService dataService;
 	
-	//게시판목록
 	//@RequestMapping(value="list.do", method=RequestMethod.GET)
 	@GetMapping("list.do")
 	public String getDataList(Model model) throws Exception {
@@ -45,7 +44,6 @@ public class DataController {
 		return "data/dataList";
 	}
 	
-	//게시판상세
 	@GetMapping("detail.do")	//detail.do?dno=1
 	public String getDataDetail(HttpServletRequest request, Model model) throws Exception {
 		int dno = Integer.parseInt(request.getParameter("dno"));
@@ -54,7 +52,6 @@ public class DataController {
 		return "data/dataDetail";
 	}
 	
-	//게시판추가
 	@GetMapping("insert.do")
 	public String insert(HttpServletRequest request, Model model) throws Exception {
 		return "data/dataInsert";
@@ -69,16 +66,15 @@ public class DataController {
 		return "redirect:list.do";
 	}
 	
-	//ckeditor 이미지 업로드
+	//ckeditor
 	@RequestMapping(value="imgUpload.do", method=RequestMethod.POST)
 	public void imgUpload(HttpServletRequest request, HttpServletResponse response, MultipartHttpServletRequest multiFile, 
 	@RequestParam MultipartFile upload) throws Exception {
-		//랜덤 문자 생성(이미지 저장 시)
+
 		UUID uid = UUID.randomUUID();
 		OutputStream out = null;
 		PrintWriter printWriter = null;
 		
-		//인코딩
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
@@ -86,16 +82,13 @@ public class DataController {
 			String fileName = upload.getOriginalFilename();
 			byte[] bytes = upload.getBytes();
 			
-			//이미지 경로
 			String path = "D:\\lhy\\pro04\\pro04\\src\\main\\webapp\\resources\\upload" + "ckImg/";
 			String ckUploadPath = path + uid + "_" + fileName;
 			File folder = new File(path);
 			System.out.println("path: "+path);
 			
-			//해당 디렉토리
 			if(!folder.exists()) {
 				try {
-					//폴더가 존재하지 않을 시 생성
 					folder.mkdirs();
 				} catch(Exception e) {
 					e.printStackTrace();
@@ -104,15 +97,14 @@ public class DataController {
 			
 			out = new FileOutputStream(new File(ckUploadPath));
 			out.write(bytes);
-			//outputStream에 저장된 데이터를 전송한 뒤 초기화
+			//outputStream
 			out.flush();
 			
-			String callback = request.getParameter("CKEditorFuncNum");
+			//String callback = request.getParameter("CKEditorFuncNum");
 			printWriter = response.getWriter();
-			//작성화면
+
 			String fileUrl = "/data/ckImgSubmit.do?uid="+uid+"&fileName="+fileName;
 			
-			//업로드 시 메시지 출력
 			printWriter.println("{\"filename\" : \""+fileName+"\", \"uploaded\" : 1, \"url\":\""+fileUrl+"\"}");
 			printWriter.flush();
 		} catch(IOException e) {
@@ -126,18 +118,17 @@ public class DataController {
 		return;
 	}
 	
-	//ckeditor 이미지 업로드 완료
+	//ckeditor
 	@RequestMapping(value="ckImgSubmit.do")
 	public void ckImgSubmit(@RequestParam(value="uid") String uid, @RequestParam(value="fileName") String fileName, 
 	HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//서버에 저장된 이미지 경로
+
 		String path = "D:\\lhy\\pro04\\pro04\\src\\main\\webapp\\resources\\upload" + "ckImg/";
 		System.out.println("path: "+path);
 		String sDirPath = path + uid + "_" + fileName;
 		
 		File imgFile = new File(sDirPath);
 		
-		//사진 이미지를 찾지 못하는 경우 예외처리로 빈 이미지 파일을 설정한다.
 		if(imgFile.isFile()) {
 			byte[] buf = new byte[1024];
 			int readByte = 0;
@@ -172,7 +163,6 @@ public class DataController {
 		}
 	}
 	
-	//게시판삭제
 	@GetMapping("delete.do")
 	public String boardDelete(HttpServletRequest request, Model model) throws Exception {
 		int dno = Integer.parseInt(request.getParameter("dno"));
@@ -180,7 +170,6 @@ public class DataController {
 		return "redirect:list.do";
 	}
 	
-	//게시판수정
 	@GetMapping("update.do")
 	public String update(HttpServletRequest request, Model model) throws Exception {
 		int dno = Integer.parseInt(request.getParameter("dno"));
@@ -188,6 +177,7 @@ public class DataController {
 		model.addAttribute("dto", dto);
 		return "data/dataUpdate";
 	}
+	
 	@PostMapping("update.do")
 	public String boardUpdate(HttpServletRequest request, Model model) throws Exception {
 		int dno = Integer.parseInt(request.getParameter("dno"));
